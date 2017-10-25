@@ -1,0 +1,65 @@
+<!-- begin steps -->
+<div class="steps">
+	<!-- states: disabled, active, done -->
+	<ul class="steps__list">
+		{% for item in steps %}
+			<li class="steps__item" data-step-state="{{states[loop.index0] or 'disabled'}}">
+				<div class="steps__title">{{item.title}}</div>
+				<div class="steps__description">{{item.description}}</div>
+				<div class="steps__icon">
+					<div class="steps__icon-in">
+						<div class="steps__icon-active" data-step-animation="true"></div>
+					</div>
+				</div>
+			</li>
+		{% endfor %}
+	</ul>
+</div>
+
+<script>
+	window.addEventListener('load', () => {
+		let current = 0;
+
+		const doc = document;
+		const steps = Array.from(doc.querySelectorAll('[data-step-state]'));
+		const buttons = Array.from(doc.querySelectorAll('[data-step-direction]'));
+		const length = steps.length - 1;
+
+		const toggleButtonsState = (state) => buttons.forEach(button => button.disabled = state);
+
+		const setState = () => {
+			toggleButtonsState(true);
+			steps.forEach((step, i) => {
+				if (i < current) step.dataset.stepState = 'done';
+				if (i > current) step.dataset.stepState = 'disabled';
+				if (i === current) step.dataset.stepState = 'active';
+			});
+		};
+
+		const goTo = {
+			next() {
+				if (current >= length) return;
+				current++;
+				setState();
+			},
+			prev() {
+				if (current <= 0) return;
+				current--;
+				setState();
+			}
+		};
+
+		//go to current step
+		buttons.forEach(button => button.addEventListener('click', goTo[button.dataset.stepDirection], false))
+
+		//remove button disabled state on animation end
+		steps.forEach(step => step
+			.querySelector('[data-step-animation]')
+			.addEventListener('transitionend', () => { 
+				if (step.dataset.stepState !== 'active') return;
+				toggleButtonsState(false); 
+			}, false)
+		);
+	});
+</script>
+<!-- end steps -->

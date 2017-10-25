@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg"><defs>
+        <style>
+            .cls-1{fill:none;stroke:#000;stroke-linejoin:round;stroke-width:2px}
+        </style>
+    </defs><symbol id="icon-facebook" viewBox="0 0 10 19">
+    <title>
+        facebook
+    </title>
+    <path d="M9.766.157v2.946H8.014c-.64 0-1.071.134-1.295.402-.223.268-.335.67-.335 1.205v2.11h3.27l-.435 3.303H6.384v8.471H2.97v-8.47H.123V6.82H2.97V4.387c0-1.384.387-2.457 1.161-3.22C4.904.404 5.934.023 7.222.023c1.093 0 1.941.045 2.544.134z" fill-rule="evenodd"/>
+</symbol><symbol id="icon-user-plus" viewBox="0 0 32 32">
+    <circle cx="16" cy="8" r="7"/>
+    <path d="M23.55 18A11 11 0 0 0 5 26v5h13"/>
+    <path d="M24 21v10"/>
+    <path d="M29 26H19"/>
+</symbol><symbol id="icon-user" viewBox="0 0 32 32">
+    
+    <title/>
+    <g data-name="41-User" id="_41-User">
+        <circle class="cls-1" cx="16" cy="8" r="7"/>
+        <path class="cls-1" d="M27 26a11 11 0 0 0-22 0v5h22z"/>
+    </g>
+</symbol></svg>
