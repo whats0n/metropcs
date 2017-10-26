@@ -1,0 +1,36 @@
+---
+title: Index page
+states: [
+	'done',
+	'active',
+	'disabled',
+	'disabled'
+]
+types: [
+	{ icon: 'new-activation', title: 'New Activation' },
+	{ icon: 'new-activation', title: 'Reactivation' },
+	{ icon: 'port-in-activation', title: 'Port-In Activation' }
+]
+step: 1
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<div class="box__heading">Please choose contact type</div>
+	<div class="box__inner" data-scrollbar="default">
+		<div class="type">
+			<div class="type__row">
+				{% for item in types %}
+					<div class="type__col">
+						<button class="type__btn" data-animation="ripple">
+							<span class="type__btn-icon type__btn-icon_fill">{{mixins.icon(item.icon)}}</span>
+							<span class="type__btn-title">{{item.title}}</span>
+						</button>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Index page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="css/app.css"> </head>
+
+  <body>
+    <!-- BEGIN content -->
+    <div class="main">
+      <!-- begin steps -->
+      <div class="steps">
+        <!-- states: disabled, active, done -->
+        <ul class="steps__list">
+          <li class="steps__item">
+            <a href="#" class="steps__in" data-step-state="disabled" data-step="1">
+              <div class="steps__title">Customer Type</div>
+              <div class="steps__description">&nbsp;</div>
+              <div class="steps__item-circle"></div>
+            </a>
+          </li>
+          <li class="steps__item">
+            <a href="#" class="steps__in" data-step-state="disabled" data-step="2">
+              <div class="steps__title">Contact Type</div>
+              <div class="steps__description">Contact Type</div>
+              <div class="steps__item-circle"></div>
+            </a>
+          </li>
+          <li class="steps__item">
+            <a href="#" class="steps__in" data-step-state="disabled" data-step="3">
+              <div class="steps__title">...</div>
+              <div class="steps__description">...</div>
+              <div class="steps__item-circle"></div>
+            </a>
+          </li>
+          <li class="steps__item">
+            <a href="#" class="steps__in" data-step-state="disabled" data-step="4">
+              <div class="steps__title">Download to POS</div>
+              <div class="steps__description">POS</div>
+              <div class="steps__item-circle"></div>
+            </a>
+          </li>
+        </ul>
+        <div class="steps__progress">
+          <div class="steps__progress-line" data-step="line">
+            <div class="steps__progress-in" data-step="in">
+              <div class="steps__progress-circle"></div>
+              <div class="steps__progress-circle"></div>
+              <div class="steps__progress-circle"></div>
+              <div class="steps__progress-circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        window.addEventListener('load', () =>
+        {
+          const defaultActive = 1
+          let current = defaultActive;
+          const doc = document;
+          const steps = Array.from(doc.querySelectorAll('[data-step-state]'));
+          const buttons = Array.from(doc.querySelectorAll('[data-step-direction]'));
+          const progressLine = doc.querySelector('[data-step="line"]');
+          const progressIn = doc.querySelector('[data-step="in"]');
+          const max = steps.length;
+          const min = 1;
+          const percent = 100 / max;
+          const toggleButtonsState = (state) => buttons.forEach(button => button.disabled = state);
+          const setProgress = () =>
+          {
+            const lineX = `translateX(calc(-${100 - (percent*current - percent/2)}% + 13px))`;
+            const inX = `translateX(calc(${100 - (percent*current - percent/2)}% - 13px))`;
+            progressLine.style.transform = lineX;
+            progressLine.style.webkitTransform = lineX;
+            progressIn.style.transform = inX;
+            progressIn.style.webkitTransform = inX;
+          };
+          const setState = () =>
+          {
+            setProgress();
+            steps.forEach((step, i) =>
+            {
+              const number = +step.dataset.step;
+              if (number < current) step.dataset.stepState = 'done';
+              if (number > current) step.dataset.stepState = 'disabled';
+              if (number === current) step.dataset.stepState = 'active';
+            });
+          };
+          const goTo = {
+            next()
+            {
+              if (current >= max) return;
+              current++;
+              setState();
+            },
+            prev()
+            {
+              if (current <= min) return;
+              current--;
+              setState();
+            },
+            currentStep(step)
+            {
+              current = step;
+              setState();
+            }
+          };
+          //go to current step
+          buttons.forEach(button => button.addEventListener('click', goTo[button.dataset.stepDirection], false));
+          steps.forEach(step =>
+          {
+            const target = +step.dataset.step;
+            step.addEventListener('click', e =>
+            {
+              e.preventDefault();
+              goTo.currentStep(target);
+            }, false);
+          });
+          setState(defaultActive);
+        });
+
+      </script>
+      <!-- end steps -->
+      <div class="box">
+        <div class="box__heading">Please choose account type</div>
+        <div class="box__inner" data-scrollbar="default">
+          <div class="type">
+            <div class="type__row">
+              <div class="type__col"> <button class="type__btn" data-animation="ripple">
+							<span class="type__btn-icon">
+<svg class="icon icon-user-plus"><use xlink:href="img/sprite.svg#icon-user-plus"></use></svg>
+</span>
+							<span class="type__btn-title">New Account</span>
+						</button> </div>
+              <div class="type__col"> <button class="type__btn" data-animation="ripple">
+							<span class="type__btn-icon">
+<svg class="icon icon-user"><use xlink:href="img/sprite.svg#icon-user"></use></svg>
+</span>
+							<span class="type__btn-title">Existing Account</span>
+						</button> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- begin footer -->
+      <footer class="footer">
+        <div class="footer__left"> <button class="btn btn_lg btn_red" data-animation="ripple">Cancel</button> </div>
+        <div class="footer__right"> <button class="btn btn_lg btn_blue" data-step-direction="prev" data-animation="ripple">Previous</button> <button class="btn btn_lg btn_blue" data-step-direction="next" data-animation="ripple">Next</button> </div>
+      </footer>
+      <!-- end footer -->
+    </div>
+    <!-- END content -->
+    <!-- BEGIN scripts -->
+    <script>
+      (function()
+      {
+        const isTouch = () => 'touchstart' in window;
+        const eventName = isTouch() ? 'touchstart' : 'mousedown';
+        const properties = ['animationDuration', 'webkitAnimationDuration', 'msAnimationDuration', 'mozAnimationDuration', 'oAnimationDuration'];
+        const getDuration = (el) =>
+        {
+          let style = window.getComputedStyle(el),
+            duration = style.webkitTransitionDuration;
+          for (let i = 0; i <= properties.length; i++)
+          {
+            let property = style[properties[i]];
+            if (!property) continue;
+            duration = property;
+            break;
+          }
+          // fix miliseconds vs seconds
+          duration = (duration.indexOf("ms") > -1) ? parseFloat(duration) : parseFloat(duration) * 1000;
+          return duration;
+        };
+        const animation = (e, target) =>
+        {
+          const width = target.offsetWidth;
+          const height = target.offsetHeight;
+          const size = width >= height ? width : height;
+          const offset = target.getBoundingClientRect();
+          const pageX = e.type !== 'touchstart' ? e.pageX : e.touches[0].clientX;
+          const pageY = e.type !== 'touchstart' ? e.pageY : e.touches[0].clientY;
+          const x = pageX - offset.left;
+          const y = pageY - offset.top;
+          const circle = document.createElement('span');
+          circle.classList.add('ripple-circle');
+          circle.style.top = `${y - size/2}px`;
+          circle.style.left = `${x - size/2}px`;
+          circle.style.width = `${size}px`;
+          circle.style.height = `${size}px`;
+          target.appendChild(circle);
+          const duration = getDuration(circle);
+          const deleteCircle = setTimeout(() => circle.remove(), duration + 50);
+          const animationEnd = e =>
+          {
+            circle.remove();
+            clearTimeout(deleteCircle);
+          };
+          circle.addEventListener('animationend', animationEnd, false);
+          circle.addEventListener('webkitAnimationEnd', animationEnd, false);
+        };
+        document.addEventListener(eventName, function(e)
+        {
+          const target = e.target.closest('[data-animation*="ripple"]');
+          if (target) animation(e, target);
+        }, false);
+      })();
+
+    </script>
+    <!-- END scripts -->
+  </body>
+
+</html>

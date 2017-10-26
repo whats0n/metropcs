@@ -17,85 +17,111 @@
       <div class="steps">
         <!-- states: disabled, active, done -->
         <ul class="steps__list">
-          <li class="steps__item" data-step-state="active">
-            <div class="steps__title">Customer Type</div>
-            <div class="steps__description">Customer Type</div>
-            <div class="steps__icon">
-              <div class="steps__icon-in">
-                <div class="steps__icon-active" data-step-animation="true"></div>
-              </div>
-            </div>
+          <li class="steps__item">
+            <a href="#" class="steps__in" data-step-state="disabled" data-step="1">
+              <div class="steps__title">Customer Type</div>
+              <div class="steps__description">Customer Type</div>
+              <div class="steps__item-circle"></div>
+            </a>
           </li>
-          <li class="steps__item" data-step-state="disabled">
-            <div class="steps__title">Contact Type</div>
-            <div class="steps__description">Contact Type</div>
-            <div class="steps__icon">
-              <div class="steps__icon-in">
-                <div class="steps__icon-active" data-step-animation="true"></div>
-              </div>
-            </div>
+          <li class="steps__item">
+            <a href="#" class="steps__in" data-step-state="disabled" data-step="2">
+              <div class="steps__title">Contact Type</div>
+              <div class="steps__description">Contact Type</div>
+              <div class="steps__item-circle"></div>
+            </a>
           </li>
-          <li class="steps__item" data-step-state="disabled">
-            <div class="steps__title">Choose action</div>
-            <div class="steps__description">Choose action</div>
-            <div class="steps__icon">
-              <div class="steps__icon-in">
-                <div class="steps__icon-active" data-step-animation="true"></div>
-              </div>
-            </div>
+          <li class="steps__item">
+            <a href="#" class="steps__in" data-step-state="disabled" data-step="3">
+              <div class="steps__title">Choose action</div>
+              <div class="steps__description">Choose action</div>
+              <div class="steps__item-circle"></div>
+            </a>
           </li>
-          <li class="steps__item" data-step-state="disabled">
-            <div class="steps__title">Download to POS</div>
-            <div class="steps__description">POS</div>
-            <div class="steps__icon">
-              <div class="steps__icon-in">
-                <div class="steps__icon-active" data-step-animation="true"></div>
-              </div>
-            </div>
+          <li class="steps__item">
+            <a href="#" class="steps__in" data-step-state="disabled" data-step="4">
+              <div class="steps__title">Download to POS</div>
+              <div class="steps__description">POS</div>
+              <div class="steps__item-circle"></div>
+            </a>
           </li>
         </ul>
+        <div class="steps__progress">
+          <div class="steps__progress-line" data-step="line">
+            <div class="steps__progress-in" data-step="in">
+              <div class="steps__progress-circle"></div>
+              <div class="steps__progress-circle"></div>
+              <div class="steps__progress-circle"></div>
+              <div class="steps__progress-circle"></div>
+            </div>
+          </div>
+        </div>
       </div>
       <script>
         window.addEventListener('load', () =>
         {
-          let current = 0;
+          const defaultActive = 1
+          let current = defaultActive;
           const doc = document;
           const steps = Array.from(doc.querySelectorAll('[data-step-state]'));
           const buttons = Array.from(doc.querySelectorAll('[data-step-direction]'));
-          const length = steps.length - 1;
+          const progressLine = doc.querySelector('[data-step="line"]');
+          const progressIn = doc.querySelector('[data-step="in"]');
+          const max = steps.length;
+          const min = 1;
+          const percent = 100 / max;
           const toggleButtonsState = (state) => buttons.forEach(button => button.disabled = state);
+          const setProgress = () =>
+          {
+            const lineX = `translateX(calc(-${100 - (percent*current - percent/2)}% + 13px))`;
+            const inX = `translateX(calc(${100 - (percent*current - percent/2)}% - 13px))`;
+            progressLine.style.transform = lineX;
+            progressLine.style.webkitTransform = lineX;
+            progressIn.style.transform = inX;
+            progressIn.style.webkitTransform = inX;
+          };
           const setState = () =>
           {
-            toggleButtonsState(true);
+            setProgress();
             steps.forEach((step, i) =>
             {
-              if (i < current) step.dataset.stepState = 'done';
-              if (i > current) step.dataset.stepState = 'disabled';
-              if (i === current) step.dataset.stepState = 'active';
+              const number = +step.dataset.step;
+              if (number < current) step.dataset.stepState = 'done';
+              if (number > current) step.dataset.stepState = 'disabled';
+              if (number === current) step.dataset.stepState = 'active';
             });
           };
           const goTo = {
             next()
             {
-              if (current >= length) return;
+              if (current >= max) return;
               current++;
               setState();
             },
             prev()
             {
-              if (current <= 0) return;
+              if (current <= min) return;
               current--;
+              setState();
+            },
+            currentStep(step)
+            {
+              current = step;
               setState();
             }
           };
           //go to current step
-          buttons.forEach(button => button.addEventListener('click', goTo[button.dataset.stepDirection], false))
-          //remove button disabled state on animation end
-          steps.forEach(step => step.querySelector('[data-step-animation]').addEventListener('transitionend', () =>
+          buttons.forEach(button => button.addEventListener('click', goTo[button.dataset.stepDirection], false));
+          steps.forEach(step =>
           {
-            if (step.dataset.stepState !== 'active') return;
-            toggleButtonsState(false);
-          }, false));
+            const target = +step.dataset.step;
+            step.addEventListener('click', e =>
+            {
+              e.preventDefault();
+              goTo.currentStep(target);
+            }, false);
+          });
+          setState(defaultActive);
         });
 
       </script>

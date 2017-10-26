@@ -1,5 +1,6 @@
 ProjectTitle: metro-pcs
 
 PageList:
-- file: page.html
-- file: page-v2.0.html
+- file: first.html
+- file: first-v2.0.html
+- file: second.html

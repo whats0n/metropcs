@@ -43,6 +43,9 @@ body,
 			.steps__icon-active:after
 				width: 50%
 		&[data-step-state*="active"]
+			.steps__title,
+			.steps__description
+				color: $blue
 			.steps__icon-in,
 			.steps__icon-active
 				transition-delay: 0.25s
@@ -51,15 +54,24 @@ body,
 			.steps__icon-active
 				transform: translate3d(calc(50% - 13px),0,0)
 		&[data-step-state*="done"]
+			&:hover
+				.steps__title,
+				.steps__description
+					color: $blue
 			.steps__icon-in,
 			.steps__icon-active
 				+gpu
+	&__in
+		display: block
+		color: inherit
 	&__title
-		+f(18, 24, null, 700)
+		+f(18, 24, null, 500)
+		transition: color 0.225s ease-in-out
 	&__description
 		+f(16, 18, null, 300)
-	&__icon,
-	&__icon-active
+		transition: color 0.225s ease-in-out
+	&__item-circle,
+	&__progress-circle
 		&:before
 			content: ''
 			display: block
@@ -68,31 +80,39 @@ body,
 			width: 26px
 			height: 26px
 			background: currentColor
-	&__icon
-		position: relative
+	&__item-circle
 		margin-top: 8px
-		&-in,
-		&-active
-			transition: transform 0.25s linear
+	&__progress
+		position: absolute
+		z-index: 1
+		left: 0
+		right: 0
+		bottom: 0
+		padding: 20px
+		color: $blue
+		pointer-events: none
+		&-line,
 		&-in
-			position: absolute
-			top: 0
-			left: 0
-			right: 0
-			bottom: 0
+			transition: transform 0.3s ease-in-out
+		&-line
 			overflow: hidden
-			transform: translate3d(-100%,0,0)
-		&-active
-			color: $blue
-			transform: translate3d(100%,0,0)
+			max-width: 800px
+			transform: translateX(-100%)
+		&-in
+			transform: translateX(100%)
 			&:after
 				content: ''
 				position: absolute
 				left: 0
-				bottom: 50%
+				bottom: 13px
 				margin-bottom: -2px
 				border-bottom: 4px solid currentColor
 				width: 100%
+		&-circle
+			display: inline-block
+			vertical-align: top
+			width: 25%
+			max-width: 200px
 
 .footer
 	position: absolute
@@ -152,14 +172,22 @@ body,
 		user-select: none
 		transform: translate3d(0, 0, 0)
 		transition: box-shadow 0.17s ease-in-out, background 0.17s ease-in-out, color 0.17s ease-in-out
+		&:hover
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3)
+		&:active
+			box-shadow: none
 		&-icon
 			display: block
+			.icon
+				fill: none
+				stroke: $darkGray
+				font-size: 86px
+			&_fill
+				.icon
+					fill: $darkGray
+					stroke: none
 		&-title
 			display: block
 			padding-top: 10px
 			font-size: 16px
 			line-height: 1
-		.icon
-			fill: none
-			stroke: $darkGray
-			font-size: 86px
