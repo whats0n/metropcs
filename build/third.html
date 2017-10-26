@@ -40,8 +40,8 @@
           </li>
           <li class="steps__item">
             <a href="#" class="steps__in" data-step-state="disabled" data-step="4">
-              <div class="steps__title">...</div>
-              <div class="steps__description">...</div>
+              <div class="steps__title">Choose action</div>
+              <div class="steps__description">Choose action</div>
               <div class="steps__item-circle"></div>
             </a>
           </li>
@@ -68,7 +68,7 @@
       <script>
         window.addEventListener('load', () =>
         {
-          const defaultActive = 1
+          const defaultActive = 3
           let current = defaultActive;
           const doc = document;
           const steps = Array.from(doc.querySelectorAll('[data-step-state]'));
@@ -135,23 +135,18 @@
       </script>
       <!-- end steps -->
       <div class="box">
-        <div class="box__heading">Please choose account type</div>
+        <div class="box__heading">Please scan IMEI</div>
         <div class="box__inner" data-scrollbar="default">
-          <div class="type">
-            <div class="type__row">
-              <div class="type__col"> <button class="type__btn" data-animation="ripple">
-							<span class="type__btn-icon">
-<svg class="icon icon-user-plus"><use xlink:href="img/sprite.svg#icon-user-plus"></use></svg>
-</span>
-							<span class="type__btn-title">New Account</span>
-						</button> </div>
-              <div class="type__col"> <button class="type__btn" data-animation="ripple">
-							<span class="type__btn-icon">
-<svg class="icon icon-user"><use xlink:href="img/sprite.svg#icon-user"></use></svg>
-</span>
-							<span class="type__btn-title">Existing Account</span>
-						</button> </div>
-            </div>
+          <div class="form">
+            <form action="/">
+              <div class="form__field"> <label class="form__label">IMEI:</label>
+                <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="Input IMEI"> <button class="input-box__clear">
+		
+<svg class="icon icon-close"><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+
+	</button> </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>

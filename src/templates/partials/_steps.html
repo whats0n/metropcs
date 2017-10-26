@@ -1,6 +1,7 @@
-{% set steps = customSteps or [
+{% set steps = [
 	{ title: 'Customer Type', description: 'Customer Type' },
 	{ title: 'Contact Type', description: 'Contact Type' },
+	{ title: 'Scan IMEI', description: 'Scan IMEI' },
 	{ title: 'Choose action', description: 'Choose action' },
 	{ title: 'Download to POS', description: 'POS' }
 ] %}
@@ -11,8 +12,8 @@
 		{% for item in steps %}
 			<li class="steps__item">
 				<a href="#" class="steps__in" data-step-state="disabled" data-step="{{loop.index}}">
-					<div class="steps__title">{{item.title | safe}}</div>
-					<div class="steps__description">{{item.description | safe}}</div>
+					<div class="steps__title">{{customStep[loop.index].title or item.title | safe}}</div>
+					<div class="steps__description">{{customStep[loop.index].description or item.description | safe}}</div>
 					<div class="steps__item-circle"></div>
 				</a>
 			</li>
