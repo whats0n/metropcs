@@ -1,0 +1,66 @@
+---
+title: Modals
+modals: [
+	{
+		target: 'error-question',
+		link: 'There is no security question.',
+		file: 'error-question',
+		classList: 'modal_sm'
+	}
+]
+---
+{% extends "layouts/_layout.html" %}
+
+{% block modalsContent %}
+
+	<ul class="modals-list">
+		{% for item in modals %}
+			<li><a href="#" data-modal-target="{{item.target}}">{{item.link}}</a></li>
+		{% endfor %}
+	</ul>
+
+	{% for item in modals %}
+		<div class="modal {{item.classList}}" data-modal="{{item.target}}">
+			<div class="modal__container" data-modal-container="{{item.target}}">
+				{% include 'partials/modals/' + item.file + '.html' %}
+			</div>
+		</div>
+	{% endfor %}
+
+	<script>
+		window.addEventListener('load', () => {
+			const OPEN = 'is-open';
+			const doc = document;
+			const modals = Array.from(doc.querySelectorAll('[data-modal]'));
+			const modalOpen = Array.from(doc.querySelectorAll('[data-modal-target]'));
+			const modalClose = Array.from(doc.querySelectorAll('[data-modal-close]'));
+
+			modalOpen.forEach(btn => {
+				const target = btn.dataset.modalTarget;
+				const currentModal = modals.filter(modal => modal.dataset.modal === target)[0];
+				
+				btn.addEventListener('click', e => {
+					e.preventDefault();
+					currentModal.classList.add(OPEN);
+				});
+			});
+
+			modalClose.forEach(btn => {
+				const target = btn.dataset.modalClose;
+				const currentModal = modals.filter(modal => modal.dataset.modal === target)[0];
+
+				btn.addEventListener('click', e => {
+					e.preventDefault();
+					currentModal.classList.remove(OPEN);
+				});
+			});
+
+			modals.forEach(modal => modal.addEventListener('click', e => {
+				const target = e.target;
+				if (target.closest('[data-modal-container]')) return;
+				modal.classList.remove(OPEN);
+			}, false));
+		});
+	</script>
+
+{% endblock %}

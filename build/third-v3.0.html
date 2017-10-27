@@ -33,8 +33,8 @@
           </li>
           <li class="steps__item">
             <a href="#" class="steps__in" data-step-state="disabled" data-step="3">
-              <div class="steps__title">Port Eligibility Check</div>
-              <div class="steps__description">Port Eligibility Check</div>
+              <div class="steps__title">Upgrade Eligibility Check</div>
+              <div class="steps__description">Upgrade Eligibility Check</div>
               <div class="steps__item-circle"></div>
             </a>
           </li>
@@ -135,22 +135,41 @@
       </script>
       <!-- end steps -->
       <div class="box">
-        <div class="box__heading"> <span>Please enter MDN to check if it is eligible for port-in promotional&nbsp;pricing</span> </div>
+        <div class="box__heading"> <span>Please enter MDN/IMEI and PIN to check if it is eligible for promotional&nbsp;pricing</span> </div>
         <div class="box__inner" data-scrollbar="default">
           <div class="form">
             <form action="/">
-              <div class="form__field"> <label class="form__label">MDN:</label>
-                <div class="input-box is-error"> <input type="text" class="simple-input input-box__input " placeholder="Input Mobile Number"> <button class="input-box__clear">
+              <div class="form__field"> <label class="form__label">PIN:</label>
+                <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="Input PIN"> <button class="input-box__clear">
 		
 <svg class="icon icon-close"><use xlink:href="img/sprite.svg#icon-close"></use></svg>
 
-	</button>
-                  <div class="error-message input-box__error-message ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, vero.</div>
+	</button> </div>
+              </div>
+              <div class="form__field form__field_line"> <label class="form__label">Forgot PIN?</label>
+                <div class="form__text"> <a href="#">Get security question</a> </div>
+                <div class="form__hidden">
+                  <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="Input Security Question"> <button class="input-box__clear">
+		
+<svg class="icon icon-close"><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+
+	</button> </div>
                 </div>
               </div>
-              <div class="form__field"> <label class="form__label">Result:</label>
-                <div class="form__text">MDN is eligible for upgrade</div>
-                <div class="form__text color-red">MDN is non eligible for upgrade</div>
+              <div class="form__field"> <label class="form__label">IMEI:</label>
+                <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="Input IMEI"> <button class="input-box__clear">
+		
+<svg class="icon icon-close"><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+
+	</button> </div>
+              </div>
+              <div class="form__devider">or</div>
+              <div class="form__field"> <label class="form__label">Mobile #:</label>
+                <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="Input Mobile Number"> <button class="input-box__clear">
+		
+<svg class="icon icon-close"><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+
+	</button> </div>
               </div>
               <div class="form__field"> <button class="btn btn_blue btn_lg btn_block">Check Number</button> </div>
             </form>

@@ -1,13 +1,11 @@
 ---
 title: Index page
-heading: 'Please choose account type'
-customStep: {
-	4: { title: '...', description: '...' }
-}
+heading: 'Please go through Quote/Preauth tool or add a line'
 types: [
-	{ icon: 'user-plus', title: 'New Account' },
-	{ icon: 'user', title: 'Existing Account' }
+	{ icon: 'sales-quote', title: 'Sales Quote' },
+	{ icon: 'open-portal', title: 'Open portal' }
 ]
+step: 3
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -18,7 +16,7 @@ types: [
 			{% for item in types %}
 				<div class="type__col">
 					<button class="type__btn" data-animation="ripple">
-						<span class="type__btn-icon">{{mixins.icon(item.icon)}}</span>
+						<span class="type__btn-icon type__btn-icon_fill">{{mixins.icon(item.icon)}}</span>
 						<span class="type__btn-title"><span>{{item.title}}</span></span>
 					</button>
 				</div>

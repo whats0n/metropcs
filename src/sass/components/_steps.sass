@@ -31,6 +31,10 @@
 	&__in
 		display: block
 		color: inherit
+		&:hover
+			.steps__title,
+			.steps__description
+				color: $blue
 		&[data-step-state*="active"]
 			.steps__title,
 			.steps__description
@@ -43,16 +47,12 @@
 			.steps__icon-active
 				transform: translate3d(calc(50% - 13px),0,0)
 		&[data-step-state*="done"]
-			&:hover
-				.steps__title,
-				.steps__description
-					color: $blue
 			.steps__icon-in,
 			.steps__icon-active
 				+gpu
 	&__title,
 	&__description
-		white-space: nowrap
+		+text-overflow
 		transition: color 0.225s ease-in-out
 	&__title
 		font-size: 18px

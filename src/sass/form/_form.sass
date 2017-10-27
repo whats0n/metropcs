@@ -13,4 +13,27 @@
 		font-size: 18px
 		line-height: 24px
 	&__field
+		&:not(:last-child)
+			padding-bottom: 30px
+		&_line
+			margin: 0 -5px
+			font-size: 0
+			.form
+				&__label,
+				&__text
+					display: inline-block
+					vertical-align: middle
+					padding: 0 5px
+	a
+		color: $blue
+		font-weight: 300
+		transition: color 0.25s ease
+		&:hover
+			color: $blueActive
+	&__devider
 		padding-bottom: 30px
+		font-size: 16px
+		line-height: 18px
+		text-transform: uppercase
+	&__hidden
+		padding-top: 8px

@@ -1,13 +1,13 @@
 ---
 title: Index page
-heading: 'Please choose account type'
-customStep: {
-	4: { title: '...', description: '...' }
-}
+heading: 'Please choose contract type'
 types: [
-	{ icon: 'user-plus', title: 'New Account' },
-	{ icon: 'user', title: 'Existing Account' }
+	{ icon: 'activation', title: 'Add-A-Line Activation' },
+	{ icon: 'reactivation', title: 'Reactivation' },
+	{ icon: 'port-in-add-a-line', title: 'Add-In Add-A-Line' },
+	{ icon: 'upgrade', title: 'Upgrade' }
 ]
+step: 1
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -18,7 +18,7 @@ types: [
 			{% for item in types %}
 				<div class="type__col">
 					<button class="type__btn" data-animation="ripple">
-						<span class="type__btn-icon">{{mixins.icon(item.icon)}}</span>
+						<span class="type__btn-icon type__btn-icon_fill">{{mixins.icon(item.icon)}}</span>
 						<span class="type__btn-title"><span>{{item.title}}</span></span>
 					</button>
 				</div>

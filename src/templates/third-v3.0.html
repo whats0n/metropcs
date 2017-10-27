@@ -1,0 +1,51 @@
+---
+title: Index page
+heading: 'Please enter MDN/IMEI and PIN to check if it is eligible for promotional&nbsp;pricing'
+step: 2
+customStep: {
+	3: { title: 'Upgrade Eligibility Check', description: 'Upgrade Eligibility Check' }
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<div class="form">
+		<form action="/">
+			<div class="form__field">
+				<label class="form__label">PIN:</label>
+				{{form.inputBox.call({
+					placeholder: 'Input PIN'
+				})}}
+			</div>
+			<div class="form__field form__field_line">
+				<label class="form__label">Forgot PIN?</label>
+				<div class="form__text">
+					<a href="#">Get security question</a>
+				</div>
+				<div class="form__hidden">
+					{{form.inputBox.call({
+						placeholder: 'Input Security Question'
+					})}}
+				</div>
+			</div>
+			<div class="form__field">
+				<label class="form__label">IMEI:</label>
+				{{form.inputBox.call({
+					placeholder: 'Input IMEI'
+				})}}
+			</div>
+			<div class="form__devider">or</div>
+			<div class="form__field">
+				<label class="form__label">Mobile #:</label>
+				{{form.inputBox.call({
+					placeholder: 'Input Mobile Number'
+				})}}
+			</div>
+			<div class="form__field">
+				<button class="btn btn_blue btn_lg btn_block">Check Number</button>					
+			</div>
+		</form>
+	</div>
+
+{% endblock %}

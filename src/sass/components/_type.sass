@@ -10,31 +10,38 @@
 		padding: 10px 
 	&__btn
 		display: block
-		padding: 20px
+		padding: 20px 20px 10px
+		border: 2px solid $blue
 		border-radius: 2px
 		width: 100%
-		color: $darkGray
-		background: $lightGray
-		box-shadow: 0 0px 1px rgba($black, 0.2), 0 2px 4px rgba($black, 0.1)
+		color: $blue
+		background: $white
+		// box-shadow: 0 0px 1px rgba($black, 0.2), 0 2px 4px rgba($black, 0.1)
 		user-select: none
 		transform: translate3d(0, 0, 0)
-		transition: box-shadow 0.17s ease-in-out, background 0.17s ease-in-out, color 0.17s ease-in-out
-		&:hover
-			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3)
-		&:active
-			box-shadow: none
+		// transition: box-shadow 0.17s ease-in-out, background 0.17s ease-in-out, color 0.17s ease-in-out
+		// &:hover
+		// 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3)
+		// &:active
+		// 	box-shadow: none
 		&-icon
 			display: block
+			font-size: 0
 			.icon
 				fill: none
-				stroke: $darkGray
+				stroke: $blue
 				font-size: 86px
 			&_fill
 				.icon
-					fill: $darkGray
+					fill: $blue
 					stroke: none
 		&-title
 			display: block
 			padding-top: 10px
-			font-size: 16px
-			line-height: 1
+			height: 48px
+			+vertical
+			span
+				display: inline-block
+				vertical-align: middle
+				font-size: 16px
+				line-height: 1
