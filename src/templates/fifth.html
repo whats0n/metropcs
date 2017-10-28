@@ -1,0 +1,84 @@
+---
+title: Index page
+heading: 'Please go through Quote/Preauth tool or add a line'
+types: [
+	{ icon: 'sales-quote', title: 'Sales Quote' },
+	{ icon: 'open-portal', title: 'Open portal' }
+]
+step: 4
+footer: { download: true }
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<div class="row">
+		<div class="col">
+			<div class="form">
+				<form action="/">
+					<div class="form__field">
+						<label class="form__label">PIN:</label>
+						{{form.inputBox.call({
+							placeholder: 'Input PIN'
+						})}}
+					</div>
+					<div class="form__field form__field_line">
+						<label class="form__label">Forgot PIN?</label>
+						<div class="form__text">
+							<a href="#">Get security question</a>
+						</div>
+						<div class="form__hidden">
+							{{form.inputBox.call({
+								placeholder: 'Input Security Question'
+							})}}
+						</div>
+					</div>
+					<div class="form__field">
+						<label class="form__label">IMEI:</label>
+						{{form.inputBox.call({
+							placeholder: 'Input IMEI'
+						})}}
+					</div>
+					<div class="form__devider">or</div>
+					<div class="form__field">
+						<label class="form__label">Mobile #:</label>
+						{{form.inputBox.call({
+							placeholder: 'Input Mobile Number'
+						})}}
+					</div>
+					<div class="form__field">
+						<button class="btn btn_blue btn_lg btn_block">Add Another Line</button>					
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="col">
+			<div class="form">
+				<form action="/">
+					<div class="form__title">Secondary Lines</div>
+					{% for item in range(0,2) %}
+					    <div class="form__box">
+					    	<div class="form__field">
+					    		<label class="form__label">IMEI:</label>
+					    		{{form.inputBox.call({
+					    			placeholder: 'Input IMEI'
+					    		})}}
+					    	</div>
+					    	<div class="form__devider">or</div>
+					    	<div class="form__field">
+					    		<label class="form__label">Mobile #:</label>
+					    		{{form.inputBox.call({
+					    			placeholder: 'Input Mobile Number'
+					    		})}}
+					    	</div>
+					    	<div class="form__field">
+					    		<button class="btn btn_red btn_lg form__remove">Remove</button>					
+					    	</div>
+					    </div>
+					{% endfor %}
+				</form>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

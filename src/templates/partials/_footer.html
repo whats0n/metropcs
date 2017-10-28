@@ -4,8 +4,14 @@
 		<button class="btn btn_lg btn_red" data-animation="ripple">Cancel</button>
 	</div>
 	<div class="footer__right">
-		<button class="btn btn_lg btn_blue" data-step-direction="prev" data-animation="ripple">Previous</button>
-		<button class="btn btn_lg btn_blue" data-step-direction="next" data-animation="ripple">Next</button>
+		{% if footer.noPrev != true %}
+			<button class="btn btn_lg btn_blue" data-step-direction="prev" data-animation="ripple">Previous</button>
+		{% endif %}
+		{% if footer.download %}
+			<button class="btn btn_lg btn_green" data-animation="ripple">Download to POS</button>
+		{% else %}
+			<button class="btn btn_lg btn_blue" data-step-direction="next" data-animation="ripple">Next</button>
+		{% endif %}
 	</div>
 </footer>
 <!-- end footer -->

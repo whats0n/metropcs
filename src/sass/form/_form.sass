@@ -13,6 +13,7 @@
 		font-size: 18px
 		line-height: 24px
 	&__field
+		+clr
 		&:not(:last-child)
 			padding-bottom: 30px
 		&_line
@@ -37,3 +38,17 @@
 		text-transform: uppercase
 	&__hidden
 		padding-top: 8px
+	&__remove
+		float: right
+		min-width: 140px
+	&__title
+		padding-bottom: 20px
+		color: $darkGray
+		font-size: 22px
+		font-weight: 500
+		line-height: 24px
+	&__box
+		padding: 30px
+		border: 1px solid $lightGray
+		+ .form__box 
+			margin-top: 20px
