@@ -1,12 +1,12 @@
 {% set steps = [
 	{ title: 'Customer Type', description: 'Customer Type' },
-	{ title: 'Contact Type', description: 'Contact Type' },
+	{ title: 'Contract Type', description: 'Contract Type' },
 	{ title: 'Scan IMEI', description: 'Scan IMEI' },
 	{ title: 'Choose action', description: 'Choose action' },
 	{ title: 'Download to POS', description: 'POS' }
 ] %}
 <!-- begin steps -->
-<div class="steps">
+<div class="steps {{stepsClassList}}">
 	<!-- states: disabled, active, done -->
 	<ul class="steps__list">
 		{% for item in steps %}

@@ -2,6 +2,10 @@
 	margin: 0 auto
 	max-width: 460px
 	color: $darkGray
+	&_md
+		max-width: 800px
+		+sm
+			max-width: 460px
 	&__label
 		display: block
 		padding-bottom: 8px
@@ -10,9 +14,11 @@
 		line-height: 18px
 	&__text
 		padding: 8px 0
-		font-size: 18px
+		font-size: 16px
 		line-height: 24px
 	&__field
+		max-width: 460px
+		margin: 0 auto
 		+clr
 		&:not(:last-child)
 			padding-bottom: 30px
@@ -25,17 +31,16 @@
 					display: inline-block
 					vertical-align: middle
 					padding: 0 5px
+				&__hidden
+					padding: 8px 5px 0
+		&_wide
+			max-width: unset
 	a
 		color: $blue
 		font-weight: 300
 		transition: color 0.25s ease
 		&:hover
 			color: $blueActive
-	&__devider
-		padding-bottom: 30px
-		font-size: 16px
-		line-height: 18px
-		text-transform: uppercase
 	&__hidden
 		padding-top: 8px
 	&__remove
@@ -52,3 +57,40 @@
 		border: 1px solid $lightGray
 		+ .form__box 
 			margin-top: 20px
+
+	&__row
+		margin: 0 -20px
+		font-size: 0
+		+sm
+			margin: 0
+		&:not(:last-child)
+			padding-bottom: 30px
+			+sm
+				padding-bottom: 0
+	&__col,
+	&__divider
+		display: inline-block
+		vertical-align: bottom
+	&__col
+		padding: 0 20px
+		width: 50%
+		+sm
+			display: block
+			padding: 0 0 30px
+			width: 100%
+	&__divider
+		padding-bottom: 30px
+		font-size: 16px
+		line-height: 18px
+		text-transform: uppercase
+	&__col + &__divider
+		padding: 21px 0
+		margin: 0 -20px
+		width: 40px
+		text-align: center
+		+sm 
+			display: block
+			padding: 0 0 30px
+			margin: 0
+			width: auto
+			text-align: left

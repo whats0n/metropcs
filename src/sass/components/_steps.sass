@@ -3,6 +3,19 @@
 	padding: 20px
 	color: #c1c1c1
 	font-size: 0
+	&_green
+		.steps
+			&__in
+				&:hover
+					.steps__title,
+					.steps__description
+						color: $green
+				&[data-step-state*="active"]
+					.steps__title,
+					.steps__description
+						color: $green
+			&__progress
+				color: $green
 	&__list
 		position: relative
 		&:after

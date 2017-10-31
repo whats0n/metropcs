@@ -1,6 +1,6 @@
 ---
 title: Index page
-heading: 'Please enter MDN to check if it is eligible for port-in promotional&nbsp;pricing'
+heading: 'Please enter the Mobile Number to check Port-In Promotional&nbsp;Pricing&nbsp;eligibility.'
 step: 2
 customStep: {
 	3: { title: 'Port Eligibility Check', description: 'Port Eligibility Check' }
@@ -13,7 +13,7 @@ customStep: {
 	<div class="form">
 		<form action="/">
 			<div class="form__field">
-				<label class="form__label">MDN:</label>
+				<label class="form__label">Mobile Number:</label>
 				{{form.inputBox.call({
 					placeholder: 'Input Mobile Number',
 					classList: 'is-error',
@@ -22,11 +22,11 @@ customStep: {
 			</div>
 			<div class="form__field">
 				<label class="form__label">Result:</label>
-				<div class="form__text">MDN is eligible for upgrade</div>
-				<div class="form__text color-red">MDN is non eligible for upgrade</div>
+				<div class="form__text color-green">Mobile Number is eligible for Port-In Promotional Pricing</div>
+				<div class="form__text color-red">Mobile Number is non-eligible for Port-In Promotional Pricing</div>
 			</div>
 			<div class="form__field">
-				<button class="btn btn_blue btn_lg btn_block">Check Number</button>					
+				<button class="btn btn_blue btn_lg btn_block">Check Port-In Eligibility</button>					
 			</div>
 		</form>
 	</div>

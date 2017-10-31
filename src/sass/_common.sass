@@ -43,9 +43,33 @@ body
 		+md
 			display: none
 
+.sm-container
+	margin: -20px
+
+.sm-section
+	padding: 40px 40px
+	margin: 20px auto
+	border: 1px solid $lightGray
+	max-width: 880px
+	&:first-child
+		+md
+			border-top: none
+	+md
+		margin: 0
+		border-left: none
+		border-right: none
+		border-bottom: none
+		max-width: unset
+	// + .sm-section
+	// 	border-top: 1px solid $lightGray
+
+
 //text mods
 .text-uppercase
 	text-transform: uppercase
 
 .color-red
 	color: $red
+
+.color-green
+	color: $green
