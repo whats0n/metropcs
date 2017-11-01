@@ -22,11 +22,11 @@ footer: { download: true }
 							placeholder: 'Input PIN'
 						})}}
 					</div>
-					<div class="form__field form__field_line">
-						<label class="form__label">Forgot PIN?</label>
-						<div class="form__text">
-							<a href="#">Get security question</a>
-						</div>
+					<div class="form__field">
+						<label class="form__label">Security Question Text</label>
+						{{form.inputBox.call({
+							placeholder: 'Input Security Question'
+						})}}
 					</div>
 					<div class="form__field">
 						<label class="form__label">IMEI:</label>

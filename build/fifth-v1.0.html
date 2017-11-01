@@ -33,8 +33,8 @@
           </li>
           <li class="steps__item">
             <a href="#" class="steps__in" data-step-state="disabled" data-step="3">
-              <div class="steps__title">Upgrade Eligibility Check</div>
-              <div class="steps__description">Upgrade Eligibility Check</div>
+              <div class="steps__title">Scan IMEI</div>
+              <div class="steps__description">Scan IMEI</div>
               <div class="steps__item-circle"></div>
             </a>
           </li>
@@ -68,7 +68,7 @@
       <script>
         window.addEventListener('load', () =>
         {
-          const defaultActive = 3
+          const defaultActive = 5
           let current = defaultActive;
           const doc = document;
           const steps = Array.from(doc.querySelectorAll('[data-step-state]'));
@@ -135,12 +135,12 @@
       </script>
       <!-- end steps -->
       <div class="box">
-        <div class="box__heading"> <span>Please enter the Mobile Number/IMEI and PIN to check Upgrade Promotional&nbsp;Pricing&nbsp;eligibility.</span> </div>
+        <div class="box__heading"> <span>Please enter the Mobile Number/IMEI and PIN to download the activation(s) to POS</span> </div>
         <div class="box__inner" data-scrollbar="default">
-          <div class="form form_md">
-            <form action="/">
-              <div class="form__row">
-                <div class="form__col">
+          <div class="row">
+            <div class="col">
+              <div class="form">
+                <form action="/">
                   <div class="form__field"> <label class="form__label">PIN:</label>
                     <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="Input PIN"> <button class="input-box__clear">
 		
@@ -148,15 +148,13 @@
 
 	</button> </div>
                   </div>
-                </div>
-                <div class="form__col">
-                  <div class="form__field form__field_line"> <label class="form__label">Forgot PIN?</label>
-                    <div class="form__text"> <a href="#">Get security question</a> </div>
+                  <div class="form__field"> <label class="form__label">Security Question Text</label>
+                    <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="Input Security Question"> <button class="input-box__clear">
+		
+<svg class="icon icon-close"><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+
+	</button> </div>
                   </div>
-                </div>
-              </div>
-              <div class="form__row">
-                <div class="form__col">
                   <div class="form__field"> <label class="form__label">IMEI:</label>
                     <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="Input IMEI"> <button class="input-box__clear">
 		
@@ -164,9 +162,7 @@
 
 	</button> </div>
                   </div>
-                </div>
-                <div class="form__divider">or</div>
-                <div class="form__col">
+                  <div class="form__divider">or</div>
                   <div class="form__field"> <label class="form__label">Mobile #:</label>
                     <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="Input Mobile Number"> <button class="input-box__clear">
 		
@@ -174,17 +170,60 @@
 
 	</button> </div>
                   </div>
-                </div>
+                  <div class="form__field"> <button class="btn btn_blue btn_lg btn_block">Add Another Line</button> </div>
+                </form>
               </div>
-              <div class="form__field"> <button class="btn btn_blue btn_lg btn_block">Check Upgrade Eligibility</button> </div>
-            </form>
+            </div>
+            <div class="col">
+              <div class="form">
+                <form action="/">
+                  <div class="form__title">Secondary Lines</div>
+                  <div class="form__box">
+                    <div class="form__field"> <label class="form__label">IMEI:</label>
+                      <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="Input IMEI"> <button class="input-box__clear">
+		
+<svg class="icon icon-close"><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+
+	</button> </div>
+                    </div>
+                    <div class="form__divider">or</div>
+                    <div class="form__field"> <label class="form__label">Mobile #:</label>
+                      <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="Input Mobile Number"> <button class="input-box__clear">
+		
+<svg class="icon icon-close"><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+
+	</button> </div>
+                    </div>
+                    <div class="form__field"> <button class="btn btn_red btn_lg form__remove">Remove</button> </div>
+                  </div>
+                  <div class="form__box">
+                    <div class="form__field"> <label class="form__label">IMEI:</label>
+                      <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="Input IMEI"> <button class="input-box__clear">
+		
+<svg class="icon icon-close"><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+
+	</button> </div>
+                    </div>
+                    <div class="form__divider">or</div>
+                    <div class="form__field"> <label class="form__label">Mobile #:</label>
+                      <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="Input Mobile Number"> <button class="input-box__clear">
+		
+<svg class="icon icon-close"><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+
+	</button> </div>
+                    </div>
+                    <div class="form__field"> <button class="btn btn_red btn_lg form__remove">Remove</button> </div>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <!-- begin footer -->
       <footer class="footer">
         <div class="footer__left"> <button class="btn btn_lg btn_red" data-animation="ripple">Cancel</button> </div>
-        <div class="footer__right"> <button class="btn btn_lg btn_blue" data-step-direction="prev" data-animation="ripple">Previous</button> <button class="btn btn_lg btn_blue" data-step-direction="next" data-animation="ripple">Next</button> </div>
+        <div class="footer__right"> <button class="btn btn_lg btn_blue" data-step-direction="prev" data-animation="ripple">Previous</button> <button class="btn btn_lg btn_green" data-animation="ripple">Download to POS</button> </div>
       </footer>
       <!-- end footer -->
     </div>

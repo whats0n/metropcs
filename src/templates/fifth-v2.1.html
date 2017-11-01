@@ -25,10 +25,12 @@ footer: { download: true }
 							</div>
 						</div>
 						<div class="form__col">
-							<div class="form__field form__field_line">
-								<label class="form__label">Forgot PIN?</label>
-								<div class="form__text">
-									<a href="#">Get security question</a>
+							<div class="form__field">
+								<label class="form__label">Security Question Text</label>
+								<div class="form__hidden">
+									{{form.inputBox.call({
+										placeholder: 'Input Answer'
+									})}}
 								</div>
 							</div>
 						</div>
