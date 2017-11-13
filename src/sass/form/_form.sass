@@ -13,9 +13,16 @@
 		font-weight: 300
 		line-height: 18px
 	&__text
-		padding: 8px 0
+		position: relative
+		padding: 8px 0 8px 20px
 		font-size: 16px
+		font-weight: 500
 		line-height: 24px
+		.icon
+			position: absolute
+			top: 12px
+			left: 0
+			font-size: 14px
 	&__field
 		max-width: 460px
 		margin: 0 auto
@@ -99,3 +106,22 @@
 			margin: 0
 			width: auto
 			text-align: left
+	&__line
+		position: relative
+		padding-right: 54px
+		&:not(:last-child)
+			margin-bottom: 20px
+			+sm
+				padding-bottom: 30px
+				margin-bottom: 30px
+				border-bottom: 1px solid $lightGray
+		+sm
+			padding-right: 0
+	&__delete
+		position: absolute
+		right: -14px
+		bottom: 0
+		+sm
+			position: relative
+			right: auto
+			bottom: auto

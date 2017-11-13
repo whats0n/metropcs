@@ -2,7 +2,7 @@
 title: Index page
 heading: 'Please choose the Sales Quote/Preauthorization tool, or add an additional line'
 types: [
-	{ icon: 'sales-quote', title: 'Sales Quote/Preauthorization' },
+	{ icon: 'sales-quote', title: 'Sales Quote / Preauthorization' },
 	{ icon: 'open-portal', title: 'Open Portal' }
 ]
 step: 3
@@ -14,7 +14,7 @@ step: 3
 	<div class="type">
 		<div class="type__row">
 			{% for item in types %}
-				<div class="type__col type__col_md">
+				<div class="type__col">
 					<button class="type__btn" data-animation="ripple">
 						<span class="type__btn-icon type__btn-icon_fill">{{mixins.icon(item.icon)}}</span>
 						<span class="type__btn-title"><span>{{item.title}}</span></span>
