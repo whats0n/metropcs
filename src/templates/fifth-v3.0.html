@@ -1,0 +1,71 @@
+---
+title: Index page
+heading: 'Please enter the Mobile Number/IMEI and PIN to download the activation(s) to POS'
+types: [
+	{ icon: 'sales-quote', title: 'Sales Quote' },
+	{ icon: 'open-portal', title: 'Open portal' }
+]
+step: 4
+footer: { download: true }
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<div class="sm-container">
+		<div class="sm-section">
+			<div class="form form_md">
+				<form action="/">
+					<div class="form__row">
+						<div class="form__col">
+							<div class="form__field">
+								<label class="form__label">PIN:</label>
+								{{form.inputBox.call({
+									placeholder: 'Input PIN'
+								})}}
+							</div>
+						</div>
+						<div class="form__col">
+							<div class="form__field form__field_line">
+								<label class="form__label">Forgot PIN?</label>
+								<div class="form__text">
+									<a href="#">Get security question</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form__field form__field_wide">
+						<div class="field">
+							<label class="field__label">IMEI:</label>
+							{{form.inputBox.call({
+								placeholder: 'Input IMEI'
+							})}}
+							<div class="field__delete">
+								<button class="btn-delete" type="button">
+									<span>Remove</span>
+									{{mixins.icon('close')}}
+								</button>		
+							</div>
+						</div>
+					</div>
+					<div class="form__field form__field_wide">
+						<div class="field">
+							<label class="field__label">Mobile #:</label>
+							{{form.inputBox.call({
+								placeholder: 'Input Mobile Number'
+							})}}
+							<div class="field__delete">
+								<button class="btn-delete" type="button">
+									<span>Remove</span>
+									{{mixins.icon('close')}}
+								</button>		
+							</div>
+						</div>
+					</div>
+					<div class="form__field">
+						<button class="btn btn_blue btn_lg btn_block" type="button" data-animation="ripple">Activate Additional Line</button>					
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock %}
