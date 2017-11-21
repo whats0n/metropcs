@@ -1,7 +1,11 @@
 .field
 	position: relative
-	padding: 0 60px 0 100px
-	max-width: 540px
+	padding-right: 60px
+	max-width: 440px
+	+sm 
+		max-width: 100%
+	+ .field
+		margin-top: 15px
 	&__label
 		position: absolute
 		top: 50%
