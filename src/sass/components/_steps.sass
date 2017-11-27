@@ -16,6 +16,12 @@
 						color: $green
 			&__progress
 				color: $green
+			&__progress-circle
+				&:before
+					background: $green
+			&__progress-in
+				&:after
+					border-color: $green
 	&__list
 		position: relative
 		&:after
@@ -24,7 +30,7 @@
 			left: 0
 			bottom: 13px
 			margin-bottom: -2px
-			border-bottom: 4px solid currentColor
+			border-bottom: 4px solid #c1c1c1
 			width: 100%
 	&__item
 		position: relative
@@ -40,7 +46,7 @@
 				width: 50%
 	&__in
 		display: block
-		color: inherit
+		color: #c1c1c1
 		&:hover
 			.steps__title,
 			.steps__description
@@ -89,7 +95,12 @@
 			border-radius: 50%
 			width: 26px
 			height: 26px
-			background: currentColor
+	&__item-circle
+		&:before
+			background: #c1c1c1
+	&__progress-circle
+		&:before
+			background: $blue
 	&__item-circle
 		margin-top: 8px
 	&__progress
@@ -106,16 +117,16 @@
 			transition: transform 0.3s ease-in-out
 		&-line
 			overflow: hidden
-			transform: translateX(-100%)
+			transform: translate3d(-100%,0,0)
 		&-in
-			transform: translateX(100%)
+			transform: translate3d(100%,0,0)
 			&:after
 				content: ''
 				position: absolute
 				left: 0
 				bottom: 13px
 				margin-bottom: -2px
-				border-bottom: 4px solid currentColor
+				border-bottom: 4px solid $blue
 				width: 100%
 		&-circle
 			display: inline-block
