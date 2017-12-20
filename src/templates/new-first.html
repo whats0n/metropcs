@@ -1,0 +1,33 @@
+---
+title: Index page
+heading: 'Please select action below'
+types: [
+	{ icon: 'sales-quote', title: 'Sales Quote / Preauthorization' },
+	{ icon: 'activation', title: 'Activation / Upgrade' },
+	{ icon: 'reactivation', title: 'Reactivation' },
+	{ icon: 'account-maintenance', title: 'Account Maintenance' }
+]
+
+footer: {
+	noPrev: true,
+	noNext: true
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<div class="type">
+		<div class="type__row">
+			{% for item in types %}
+				<div class="type__col">
+					<button class="type__btn" data-animation="ripple">
+						<span class="type__btn-icon type__btn-icon_fill">{{mixins.icon(item.icon)}}</span>
+						<span class="type__btn-title"><span>{{item.title}}</span></span>
+					</button>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+{% endblock %}

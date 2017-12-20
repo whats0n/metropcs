@@ -6,6 +6,24 @@
 		max-width: 800px
 		+sm
 			max-width: 460px
+	&_awesome-upgrade
+		overflow: auto
+		padding: 0 0 270px
+		margin: -40px -20px
+		max-width: none
+	&__fullheight-scrollable
+		overflow: auto
+		padding: 40px 20px
+		max-height: calc(100vh - 470px)
+	&__inner
+		max-width: 800px
+		margin: 0 auto
+	&__sticky-actions
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 0
+		padding: 0 0 20px
 	&__label
 		display: block
 		padding-bottom: 8px
@@ -75,6 +93,8 @@
 			padding-bottom: 30px
 			+sm
 				padding-bottom: 0
+		&_sticky
+			padding-bottom: 0 !important
 	&__col,
 	&__divider
 		display: inline-block
@@ -125,3 +145,8 @@
 			position: relative
 			right: auto
 			bottom: auto
+	&__subtitle
+		padding: 0 20px
+		color: #737373
+		+f(22, 22, null, 500)
+		text-align: center	

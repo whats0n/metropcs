@@ -10,7 +10,9 @@
 		{% if footer.download %}
 			<button class="btn btn_lg btn_green" data-animation="ripple">Download to POS</button>
 		{% else %}
-			<button class="btn btn_lg btn_blue" data-step-direction="next" data-animation="ripple">Next</button>
+			{% if not footer.noNext %}
+				<button class="btn btn_lg btn_blue" data-step-direction="next" data-animation="ripple">Next</button>
+			{% endif %}
 		{% endif %}
 	</div>
 </footer>
