@@ -5,7 +5,7 @@ modals: [
 		target: 'error-question',
 		link: 'There is no security question.',
 		file: 'error-question',
-		classList: 'modal_sm'
+		classList: 'v-modal_sm'
 	}
 ]
 ---
@@ -13,15 +13,15 @@ modals: [
 
 {% block modalsContent %}
 
-	<ul class="modals-list">
+	<ul class="v-modals-list">
 		{% for item in modals %}
 			<li><a href="#" data-modal-target="{{item.target}}">{{item.link}}</a></li>
 		{% endfor %}
 	</ul>
 
 	{% for item in modals %}
-		<div class="modal {{item.classList}}" data-modal="{{item.target}}">
-			<div class="modal__container" data-modal-container="{{item.target}}">
+		<div class="v-modal {{item.classList}}" data-modal="{{item.target}}">
+			<div class="v-modal__container" data-modal-container="{{item.target}}">
 				{% include 'partials/modals/' + item.file + '.html' %}
 			</div>
 		</div>
