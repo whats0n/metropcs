@@ -56,13 +56,17 @@ footer: {
 			<div class="form__field form__field_wide">
 				<div class="form__subtitle">Add another transaction to this order or download to POS to сontinue</div>
 			</div>
-			<div class="type type_sm">
+			<div class="type type_md">
 				<div class="type__row">
 					{% for item in types %}
 						<div class="type__col">
-							<button class="type__btn" data-animation="ripple" type="button">
+							{#<button class="type__btn" data-animation="ripple" type="button">
 								<span class="type__btn-icon type__btn-icon_fill">{{mixins.icon(item.icon)}}</span>
 								<span class="type__btn-title"><span>{{item.title}}</span></span>
+							</button>#}
+							<button class="sm-btn" data-animation="ripple" type="button">
+								<span class="sm-btn__icon">{{mixins.icon(item.icon)}}</span>
+								<span class="sm-btn__title">{{item.title}}</span>
 							</button>
 						</div>
 					{% endfor %}
