@@ -11,6 +11,8 @@
 	left: 0
 	right: 0
 	bottom: 0
+	overflow: auto
+	padding: 20px 15px
 	background: rgba($black, 0.5)
 	+vertical
 	white-space: nowrap
@@ -25,6 +27,9 @@
 	&_sm
 		.v-modal__container
 			max-width: 480px
+	&_md 
+		.v-modal__container
+			max-width: 680px
 	&__container
 		display: inline-block
 		vertical-align: middle
@@ -34,9 +39,31 @@
 		text-align: left
 
 .v-modal-content
+	position: relative
+	overflow: hidden
 	border-radius: 5px
 	background: $white
 	box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.2)
+	&__close
+		position: absolute
+		top: 0
+		right: 0
+		width: 50px
+		height: 50px
+		color: $white
+		opacity: 0.8
+		background: none
+		font-size: 0
+		transition: opacity 0.25s, background 0.25s, box-shadow 0.25s
+		&:hover,
+		&:active
+			opacity: 1
+			background: rgba($black, 0.1)
+		&:active
+			box-shadow: inset 2px 2px 6px rgba(0,0,0,.2)
+		.icon 
+			fill: currentColor
+			font-size: 16px
 	&__heading
 		padding: 13px 20px
 		border-radius: 5px 5px 0 0
@@ -60,3 +87,51 @@
 	&__submit
 		float: right
 		min-width: 125px
+	//table
+	&__table
+		display: table
+		table-layout: fixed
+		width: 100%
+		text-align: center
+	&__thead
+		display: table-header-group
+		color: $white
+		background: $blue
+		font-size: 16px
+		font-weight: 500
+		line-height: 1
+	&__tbody
+		display: table-row-group
+		color: $darkGray
+		font-size: 16px
+		font-weight: 400
+		line-height: 1.2
+		.v-modal-content
+			&__td 
+				border-bottom: 1px solid rgba($darkGray, 0.3)
+				&:first-child
+					border-left: 1px solid rgba($darkGray, 0.3)
+				&:last-child
+					border-right: 1px solid rgba($darkGray, 0.3)
+	&__tr 
+		display: table-row
+	&__td 
+		display: table-cell
+		vertical-align: middle
+		padding: 12px 10px
+		word-break: break-word
+		&:first-child
+			padding-left: 20px
+		&:last-child 
+			padding-right: 20px
+		&[data-column="icon"]
+			width: 50px
+			font-size: 0
+			.icon
+				font-size: 16px
+		&[data-column="number"]
+			width: 33.33%
+		&[data-column="name"]
+			width: 33.33%
+		&[data-column="date"]
+			width: 33.33%

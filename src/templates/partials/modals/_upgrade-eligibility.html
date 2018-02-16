@@ -1,0 +1,49 @@
+<!-- begin v-modal-content -->
+<div class="v-modal-content">
+	<button class="v-modal-content__close" onclick="closeModal(event, 'upgrade-eligibility')">
+		{{mixins.icon('close')}}
+	</button>
+	<div class="v-modal-content__heading">Upgrade Eligibility</div>
+	<div class="v-modal-content__body">
+		<div class="v-modal-content__table">
+			<div class="v-modal-content__thead">
+				<div class="v-modal-content__tr">
+					<div class="v-modal-content__td" data-column="icon">&nbsp;</div>
+					<div class="v-modal-content__td" data-column="number">(PTN)</div>
+					<div class="v-modal-content__td" data-column="name">Eligible</div>
+					<div class="v-modal-content__td" data-column="date">Eligibility Date</div>
+				</div>
+			</div>
+			<div class="v-modal-content__tbody">
+				{% for item in [
+					{
+						number: '(682) 207-9619',
+						name: 'Y'
+					},
+					{
+						number: '(682) 208-9619',
+						name: 'X'
+					},
+					{
+						number: '(682) 209-9619',
+						name: 'Z',
+						date: '07/17/2017'
+					}
+				] %}
+					<div class="v-modal-content__tr">
+						<div class="v-modal-content__td" data-column="icon">
+							{{mixins.icon('check')}}
+						</div>
+						<div class="v-modal-content__td" data-column="number">{{item.number or '&nbsp' | safe}}</div>
+						<div class="v-modal-content__td" data-column="name">{{item.name or '&nbsp' | safe}}</div>
+						<div class="v-modal-content__td" data-column="date">{{item.date or '&nbsp' | safe}}</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<div class="v-modal-content__footer">
+		<button class="btn btn_blue text-uppercase v-modal-content__submit" onclick="closeModal(event, 'error-question')" data-animation="ripple">OK</button>
+	</div>
+</div>
+<!-- end v-modal-content -->
