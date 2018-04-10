@@ -67,7 +67,7 @@ footer: {
 											<div class="tooltip__inner"><p>{{item.fee}}</p></div>
 										</div>
 									{% endif %}
-									<button class="btn btn_primary btn_dollar table__btn" data-animation="ripple">Create XBM{% if item.fee %}{{mixins.icon('dollar')}}{% endif %}</button>
+									<button class="btn btn_primary btn_dollar table__btn" data-animation="ripple" data-modal-target="xbm">Create XBM{% if item.fee %}{{mixins.icon('dollar')}}{% endif %}</button>
 								</div>
 							</div>
 							<div class="table__td">
@@ -81,5 +81,6 @@ footer: {
 	</div>
 
 	{% include 'partials/modals/_payment.html' %}
+	{% include 'partials/modals/_xbm.html' %}
 
 {% endblock %}

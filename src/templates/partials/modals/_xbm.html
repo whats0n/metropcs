@@ -1,0 +1,52 @@
+
+<div class="v-modal v-modal_md" data-modal="xbm">
+	<div class="v-modal__container" data-modal-container>
+		<!-- begin v-modal-content -->
+		<div class="v-modal-content">
+			<div class="v-modal-content__heading">XBM Details</div>
+			<div class="v-modal-content__body">
+				<ul class="fieldset v-modal-content__fieldset">
+					{% for item in [
+						{ label: 'Customer Name', value: 'Prepopulated' },
+						{ label: 'Primary MDN', value: 'Prepopulated' },
+						{ label: 'Secondary MDN', placeholder: 'Enter MDN' },
+						{ label: 'Device Manufacturer', placeholder: 'Enter Manufacturer' },
+						{ label: 'Device Model', value: 'Prepopulated' },
+						{ label: 'ESN/IMEI', value: 'Prepopulated' },
+						{ label: 'Does the device have any liquid damage?', radios: 'liquid damage' },
+						{ label: 'Does the device have any physical damage?', radios: 'physical damage' }
+					] %}
+						{% set value = item.value or '' %}
+						<li class="fieldset__item">
+							<div class="fieldset__label">{{item.label}}:</div>
+							<div class="fieldset__field">
+								{% if item.radios %}
+									<div class="fieldset__radio">
+										{{form.radio.call({ content: 'Yes', name: item.radios })}}
+									</div>
+									<div class="fieldset__radio">
+										{{form.radio.call({ content: 'No', name: item.radios })}}
+									</div>
+								{% else %}
+									{{form.inputBox.call({
+										placeholder: item.placeholder,
+										inputAttrs: 'value="' + value + '"'
+									})}}
+								{% endif %}
+							</div>
+						</li>
+					{% endfor %}
+				</ul>
+				<div class="textbox">
+					<div class="textbox__label">Briefly describe issue with device?</div>
+					<textarea class="textarea"></textarea>
+				</div>
+			</div>
+			<div class="v-modal-content__footer">
+				<button class="btn btn_lg btn_red v-modal-content__cancel" data-animation="ripple" data-modal-close>Cancel</button>
+				<button class="btn btn_lg btn_green v-modal-content__submit" data-animation="ripple" data-modal-close>Download to POS</button>
+			</div>
+		</div>
+		<!-- end v-modal-content -->
+	</div>
+</div>

@@ -50,7 +50,7 @@
                           <div class="tooltip__inner">
                             <p>$15 Fee</p>
                           </div>
-                        </div> <button class="btn btn_primary btn_dollar table__btn" data-animation="ripple">Create XBM
+                        </div> <button class="btn btn_primary btn_dollar table__btn" data-animation="ripple" data-modal-target="xbm">Create XBM
 <svg class="icon icon-dollar "><use xlink:href="img/sprite.svg#icon-dollar"></use></svg>
 </button> </div>
                     </div>
@@ -61,7 +61,7 @@
                     <div class="table__td">LG Stylo 3</div>
                     <div class="table__td">May 22<small>nd</small>, 2018</div>
                     <div class="table__td">
-                      <div class="tooltip-wrapper"> <button class="btn btn_primary btn_dollar table__btn" data-animation="ripple">Create XBM</button> </div>
+                      <div class="tooltip-wrapper"> <button class="btn btn_primary btn_dollar table__btn" data-animation="ripple" data-modal-target="xbm">Create XBM</button> </div>
                     </div>
                     <div class="table__td"> <button class="btn btn_primary table__btn" data-animation="ripple">Return Device</button> </div>
                   </div>
@@ -70,7 +70,7 @@
                     <div class="table__td">Samsung J7 Prime</div>
                     <div class="table__td">April 19<small>th</small>, 2018</div>
                     <div class="table__td">
-                      <div class="tooltip-wrapper"> <button class="btn btn_primary btn_dollar table__btn" data-animation="ripple">Create XBM</button> </div>
+                      <div class="tooltip-wrapper"> <button class="btn btn_primary btn_dollar table__btn" data-animation="ripple" data-modal-target="xbm">Create XBM</button> </div>
                     </div>
                     <div class="table__td"> <button class="btn btn_primary table__btn" data-animation="ripple" disabled>Return Device</button> </div>
                   </div>
@@ -144,6 +144,128 @@
                   </ul>
                 </div>
                 <div class="v-modal-content__footer"> <button class="btn btn_lg btn_red v-modal-content__cancel" data-animation="ripple" data-modal-close>Cancel</button> <button class="btn btn_lg btn_primary v-modal-content__submit" data-animation="ripple" data-modal-close>Make Payment</button>                  </div>
+              </div>
+              <!-- end v-modal-content -->
+            </div>
+          </div>
+          <div class="v-modal v-modal_md" data-modal="xbm">
+            <div class="v-modal__container" data-modal-container>
+              <!-- begin v-modal-content -->
+              <div class="v-modal-content">
+                <div class="v-modal-content__heading">XBM Details</div>
+                <div class="v-modal-content__body">
+                  <ul class="fieldset v-modal-content__fieldset">
+                    <li class="fieldset__item">
+                      <div class="fieldset__label">Customer Name:</div>
+                      <div class="fieldset__field">
+                        <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="" value="Prepopulated"> <button class="input-box__clear" type="button">
+		
+<svg class="icon icon-close "><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+
+	</button> </div>
+                      </div>
+                    </li>
+                    <li class="fieldset__item">
+                      <div class="fieldset__label">Primary MDN:</div>
+                      <div class="fieldset__field">
+                        <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="" value="Prepopulated"> <button class="input-box__clear" type="button">
+		
+<svg class="icon icon-close "><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+
+	</button> </div>
+                      </div>
+                    </li>
+                    <li class="fieldset__item">
+                      <div class="fieldset__label">Secondary MDN:</div>
+                      <div class="fieldset__field">
+                        <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="Enter MDN" value=""> <button class="input-box__clear" type="button">
+		
+<svg class="icon icon-close "><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+
+	</button> </div>
+                      </div>
+                    </li>
+                    <li class="fieldset__item">
+                      <div class="fieldset__label">Device Manufacturer:</div>
+                      <div class="fieldset__field">
+                        <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="Enter Manufacturer" value=""> <button class="input-box__clear" type="button">
+		
+<svg class="icon icon-close "><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+
+	</button> </div>
+                      </div>
+                    </li>
+                    <li class="fieldset__item">
+                      <div class="fieldset__label">Device Model:</div>
+                      <div class="fieldset__field">
+                        <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="" value="Prepopulated"> <button class="input-box__clear" type="button">
+		
+<svg class="icon icon-close "><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+
+	</button> </div>
+                      </div>
+                    </li>
+                    <li class="fieldset__item">
+                      <div class="fieldset__label">ESN/IMEI:</div>
+                      <div class="fieldset__field">
+                        <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="" value="Prepopulated"> <button class="input-box__clear" type="button">
+		
+<svg class="icon icon-close "><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+
+	</button> </div>
+                      </div>
+                    </li>
+                    <li class="fieldset__item">
+                      <div class="fieldset__label">Does the device have any liquid damage?:</div>
+                      <div class="fieldset__field">
+                        <div class="fieldset__radio"> <label class="radio ">
+	<input type="radio" name="liquid damage">
+	<span class="radio__icon">
+		
+<svg class="icon icon-checked "><use xlink:href="img/sprite.svg#icon-checked"></use></svg>
+
+	</span>
+	<span class="radio__content">Yes</span>
+</label> </div>
+                        <div class="fieldset__radio"> <label class="radio ">
+	<input type="radio" name="liquid damage">
+	<span class="radio__icon">
+		
+<svg class="icon icon-checked "><use xlink:href="img/sprite.svg#icon-checked"></use></svg>
+
+	</span>
+	<span class="radio__content">No</span>
+</label> </div>
+                      </div>
+                    </li>
+                    <li class="fieldset__item">
+                      <div class="fieldset__label">Does the device have any physical damage?:</div>
+                      <div class="fieldset__field">
+                        <div class="fieldset__radio"> <label class="radio ">
+	<input type="radio" name="physical damage">
+	<span class="radio__icon">
+		
+<svg class="icon icon-checked "><use xlink:href="img/sprite.svg#icon-checked"></use></svg>
+
+	</span>
+	<span class="radio__content">Yes</span>
+</label> </div>
+                        <div class="fieldset__radio"> <label class="radio ">
+	<input type="radio" name="physical damage">
+	<span class="radio__icon">
+		
+<svg class="icon icon-checked "><use xlink:href="img/sprite.svg#icon-checked"></use></svg>
+
+	</span>
+	<span class="radio__content">No</span>
+</label> </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="textbox">
+                    <div class="textbox__label">Briefly describe issue with device?</div> <textarea class="textarea"></textarea> </div>
+                </div>
+                <div class="v-modal-content__footer"> <button class="btn btn_lg btn_red v-modal-content__cancel" data-animation="ripple" data-modal-close>Cancel</button> <button class="btn btn_lg btn_green v-modal-content__submit" data-animation="ripple" data-modal-close>Download to POS</button>                  </div>
               </div>
               <!-- end v-modal-content -->
             </div>
