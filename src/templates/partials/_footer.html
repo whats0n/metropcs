@@ -5,13 +5,27 @@
 	</div>
 	<div class="footer__right">
 		{% if footer.noPrev != true %}
-			<button class="btn btn_lg btn_blue" data-step-direction="prev" data-animation="ripple">Previous</button>
+			<div class="footer__btn">
+				<button class="btn btn_lg btn_primary" data-step-direction="prev" data-animation="ripple">{{footer.prevText or 'Previous'}}</button>
+			</div>
 		{% endif %}
 		{% if footer.download %}
-			<button class="btn btn_lg btn_green" data-animation="ripple">Download to POS</button>
+			<div class="footer__btn">
+				<button class="btn btn_lg btn_green" data-animation="ripple">Download to POS</button>
+			</div>
 		{% else %}
 			{% if not footer.noNext %}
-				<button class="btn btn_lg btn_blue" data-step-direction="next" data-animation="ripple">Next</button>
+				<div class="footer__btn tooltip-wrapper">
+					{% if footer.nextTooltip %}
+						<div class="tooltip tooltip_right footer__tooltip">
+							<div class="tooltip__inner">
+								{{mixins.icon('information', 'tooltip__icon')}}
+								<p>{{footer.nextTooltip | safe}}</p>
+							</div>
+						</div>
+					{% endif %}
+					<button class="btn btn_lg btn_primary" data-step-direction="next" data-animation="ripple">{{footer.nextText or 'Next'}}</button>
+				</div>
 			{% endif %}
 		{% endif %}
 	</div>

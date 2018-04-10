@@ -1,0 +1,38 @@
+
+<div class="v-modal v-modal_md" data-modal="payment">
+	<div class="v-modal__container" data-modal-container>
+		<!-- begin v-modal-content -->
+		<div class="v-modal-content">
+			<div class="v-modal-content__header">
+				<a href="#" class="v-modal-content__logo">
+					<img src="img/incomm-logo.png" alt="Incomm Logo">
+				</a>
+			</div>
+			<div class="v-modal-content__body">
+				<ul class="choice v-modal-content__choice">
+					{% for item in [
+						{ label: 'Account Balance', value: '$120.00' },
+						{ label: 'Due Immediately', value: '$63.00' },
+						{ label: 'Other Amount' }
+					] %}
+						<li class="choice__item">
+							{{form.radio.call({ classList: 'choice__radio', name: 'payment-radio' })}}
+							<div class="choice__label">{{item.label}}:</div>
+							<div class="choice__field">
+								{{form.inputBox.call({
+									placeholder: 'Enter Amount',
+									inputAttrs: 'value="' + item.value + '"',
+									inputClassList: 'text-center'
+								})}}
+							</div>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="v-modal-content__footer">
+				<button class="btn btn_lg btn_primary v-modal-content__submit" data-animation="ripple" data-modal-close>Make Payment</button>
+			</div>
+		</div>
+		<!-- end v-modal-content -->
+	</div>
+</div>

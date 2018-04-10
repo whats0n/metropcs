@@ -1,0 +1,42 @@
+.checkbox
+	position: relative
+	display: inline-block
+	vertical-align: top
+	min-width: 30px
+	min-height: 30px
+	input 
+		display: none
+		&:checked
+			+ .checkbox
+				&__icon
+					border-color: $primary
+					.icon 
+						opacity: 1
+						+gpu
+		&:disabled
+			+ .checkbox
+				&__icon
+					border-color: $mediumGray
+					cursor: not-allowed
+					.icon 
+						fill: $mediumGray
+	&__icon
+		position: absolute
+		top: 0
+		left: 0
+		overflow: hidden
+		border: 1px solid $darkGray
+		border-radius: 3px
+		width: 30px
+		height: 30px
+		+vertical
+		cursor: pointer
+		transition: border-color 0.25s
+		.icon
+			display: inline-block
+			vertical-align: middle
+			fill: $primary
+			opacity: 0
+			font-size: 18px
+			transition: opacity 0.25s, transform 0.25s
+			transform: translate3d(0,-10px,0)

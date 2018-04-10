@@ -47,16 +47,36 @@
 		&:active
 			color: $white
 			background: $red
-	&_blue
+	&_primary
 		color: $white
-		background: $blue
+		background: $primary
 		&:active
 			color: $white
-			background: $blue
+			background: $primary
+		&[data-animation*="ripple"]
+			.ripple-circle
+				background: rgba($white, 0.1)
 	&:disabled,
 	&.is-disabled
 		opacity: 0.5
 		pointer-events: none
+	&_dollar
+		position: relative
+		padding-left: 30px
+		padding-right: 30px
+		+sm 
+			padding-left: 20px
+			padding-right: 20px
+	.icon-dollar
+		position: absolute
+		top: 50%
+		left: 15px
+		margin-top: -0.55em
+		fill: $white
+		font-size: 16px
+		+sm 
+			left: 8px
+
 
 .btn-delete
 	display: inline-block

@@ -1,12 +1,13 @@
 .v-modals-list
 	padding: 20px
 	a
-		color: $blue
+		color: $primary
 		font-size: 18px
 		line-height: 24px
 
 .v-modal
 	position: fixed
+	z-index: 999
 	top: 0
 	left: 0
 	right: 0
@@ -68,7 +69,7 @@
 		padding: 13px 20px
 		border-radius: 5px 5px 0 0
 		color: $white
-		background: $blue
+		background: $primary
 		font-size: 24px
 		font-weight: 500
 		line-height: 1
@@ -96,7 +97,7 @@
 	&__thead
 		display: table-header-group
 		color: $white
-		background: $blue
+		background: $primary
 		font-size: 16px
 		font-weight: 500
 		line-height: 1
@@ -135,3 +136,11 @@
 			width: 33.33%
 		&[data-column="date"]
 			width: 33.33%
+	&__header
+		padding: 20px
+		+clr
+	&__logo
+		float: left
+		img 
+			max-width: 100px
+			max-height: 80px

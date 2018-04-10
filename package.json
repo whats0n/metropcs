@@ -48,6 +48,7 @@
     "htmlhint": "^0.9.13",
     "husky": "^0.13.2",
     "jquery": "^3.1.1",
+    "jquery-inputmask": "^1.0.1",
     "lint-staged": "^4.0.2",
     "lodash": "^4.3.0",
     "lost": "^7.1.0",

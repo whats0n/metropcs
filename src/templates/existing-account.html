@@ -1,0 +1,85 @@
+---
+title: Index page
+heading: 'Existing Account'
+step: 2
+footer: {
+	prevText: 'Open Portal'
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<div class="grid">
+		<div class="grid__header">
+			<div class="payment-header">
+				<div class="payment-header__row">
+					<div class="payment-header__col">Account Balance: $120.0</div>
+					<div class="payment-header__col">Due Immediately: <span class="color-red">$63</span></div>
+					<div class="payment-header__controls">
+						<a href="#" class="payment-header__logo">
+							<img src="img/incomm-logo.png" alt="Incomm Logo">
+						</a>
+						<button class="btn btn_primary btn_lg payment-header__btn" data-modal-target="payment">Make Payment</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="grid__body">
+			<div class="table">
+				<div class="table__thead">
+					<div class="table__tr">
+						<div class="table__th">MDN</div>
+						<div class="table__th">Device</div>
+						<div class="table__th">Eligibility</div>
+						<div class="table__th">XBM</div>
+						<div class="table__th">Metro Promise</div>
+					</div>
+				</div>
+				<div class="table__tbody">
+					{% for item in [
+						{
+							mdn: '669-232-3434',
+							device: 'Sam Galaxy S9',
+							eligibility: 'Yes',
+							fee: '$15 Fee'
+						},
+						{
+							mdn: '669-232-3435',
+							device: 'LG Stylo 3',
+							eligibility: 'May 22<small>nd</small>, 2018'
+						},
+						{
+							mdn: '669-232-3436',
+							device: 'Samsung J7 Prime',
+							eligibility: 'April 19<small>th</small>, 2018',
+							disabled: true
+						}
+					] %}
+						<div class="table__tr">
+							<div class="table__td">{{item.mdn}}</div>
+							<div class="table__td">{{item.device}}</div>
+							<div class="table__td">{{item.eligibility | safe}}</div>
+							<div class="table__td">
+								<div class="tooltip-wrapper">
+									{% if item.fee %}
+										<div class="tooltip tooltip_center tooltip_sm">
+											<div class="tooltip__inner"><p>{{item.fee}}</p></div>
+										</div>
+									{% endif %}
+									<button class="btn btn_primary btn_dollar table__btn" data-animation="ripple">Create XBM{% if item.fee %}{{mixins.icon('dollar')}}{% endif %}</button>
+								</div>
+							</div>
+							<div class="table__td">
+								<button class="btn btn_primary table__btn" data-animation="ripple" {% if item.disabled %}disabled{% endif %}>Return Device</button>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% include 'partials/modals/_payment.html' %}
+
+{% endblock %}

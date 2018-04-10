@@ -1,6 +1,8 @@
 import svg4everybody from 'svg4everybody';
 svg4everybody();
 
+import './components';
+
 window.addEventListener('load', function() {
   //POLYFILLS
   (function(ELEMENT) {

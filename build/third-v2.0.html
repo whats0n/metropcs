@@ -21,17 +21,17 @@
               <div class="form__field"> <label class="form__label">Mobile Number:</label>
                 <div class="input-box is-error"> <input type="text" class="simple-input input-box__input " placeholder="Input Mobile Number"> <button class="input-box__clear" type="button">
 		
-<svg class="icon icon-close"><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+<svg class="icon icon-close "><use xlink:href="img/sprite.svg#icon-close"></use></svg>
 
 	</button>
                   <div class="error-message input-box__error-message ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, vero.</div>
                 </div>
               </div>
               <div class="form__field"> <label class="form__label">Result:</label>
-                <div class="form__text color-green"> <svg class="icon icon-check"><use xlink:href="img/sprite.svg#icon-check"></use></svg> Mobile Number is eligible for Port-In Promotional Pricing</div>
-                <div class="form__text color-red"> <svg class="icon icon-error"><use xlink:href="img/sprite.svg#icon-error"></use></svg> Mobile Number is non-eligible for Port-In Promotional Pricing</div>
+                <div class="form__text color-green"> <svg class="icon icon-check "><use xlink:href="img/sprite.svg#icon-check"></use></svg> Mobile Number is eligible for Port-In Promotional Pricing</div>
+                <div class="form__text color-red"> <svg class="icon icon-error "><use xlink:href="img/sprite.svg#icon-error"></use></svg> Mobile Number is non-eligible for Port-In Promotional Pricing</div>
               </div>
-              <div class="form__field"> <button class="btn btn_blue btn_lg btn_block">Check Port-In Eligibility</button> </div>
+              <div class="form__field"> <button class="btn btn_primary btn_lg btn_block">Check Port-In Eligibility</button> </div>
             </form>
           </div>
         </div>
@@ -39,7 +39,10 @@
       <!-- begin footer -->
       <footer class="footer">
         <div class="footer__left"> <button class="btn btn_lg btn_red" data-animation="ripple">Cancel</button> </div>
-        <div class="footer__right"> <button class="btn btn_lg btn_blue" data-step-direction="prev" data-animation="ripple">Previous</button> <button class="btn btn_lg btn_blue" data-step-direction="next" data-animation="ripple">Next</button> </div>
+        <div class="footer__right">
+          <div class="footer__btn"> <button class="btn btn_lg btn_primary" data-step-direction="prev" data-animation="ripple">Previous</button> </div>
+          <div class="footer__btn tooltip-wrapper"> <button class="btn btn_lg btn_primary" data-step-direction="next" data-animation="ripple">Next</button> </div>
+        </div>
       </footer>
       <!-- end footer -->
     </div>

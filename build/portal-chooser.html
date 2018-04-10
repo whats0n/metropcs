@@ -20,13 +20,13 @@
             <div class="type__row">
               <div class="type__col"> <button class="type__btn" data-animation="ripple">
 						<span class="type__btn-icon type__btn-icon_fill">
-<svg class="icon icon-open-portal"><use xlink:href="img/sprite.svg#icon-open-portal"></use></svg>
+<svg class="icon icon-open-portal "><use xlink:href="img/sprite.svg#icon-open-portal"></use></svg>
 </span>
 						<span class="type__btn-title"><span>Open EDGE</span></span>
 					</button> </div>
               <div class="type__col"> <button class="type__btn" data-animation="ripple">
 						<span class="type__btn-icon type__btn-icon_fill">
-<svg class="icon icon-open-asap"><use xlink:href="img/sprite.svg#icon-open-asap"></use></svg>
+<svg class="icon icon-open-asap "><use xlink:href="img/sprite.svg#icon-open-asap"></use></svg>
 </span>
 						<span class="type__btn-title"><span>Open ASAP</span></span>
 					</button> </div>
@@ -40,7 +40,10 @@
       <!-- begin footer -->
       <footer class="footer">
         <div class="footer__left"> <button class="btn btn_lg btn_red" data-animation="ripple">Cancel</button> </div>
-        <div class="footer__right"> <button class="btn btn_lg btn_blue" data-step-direction="prev" data-animation="ripple">Previous</button> <button class="btn btn_lg btn_blue" data-step-direction="next" data-animation="ripple">Next</button> </div>
+        <div class="footer__right">
+          <div class="footer__btn"> <button class="btn btn_lg btn_primary" data-step-direction="prev" data-animation="ripple">Previous</button> </div>
+          <div class="footer__btn tooltip-wrapper"> <button class="btn btn_lg btn_primary" data-step-direction="next" data-animation="ripple">Next</button> </div>
+        </div>
       </footer>
       <!-- end footer -->
     </div>

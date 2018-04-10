@@ -24,3 +24,6 @@ PageList:
 - file: new-third.html
 - file: third-updated.html
 - file: portal-chooser.html
+- file: account-lookup.html
+- file: confirm-and-download.html
+- file: existing-account.html

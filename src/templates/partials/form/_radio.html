@@ -1,0 +1,10 @@
+{% import "partials/_mixins.html" as mixins %}
+{% macro call(props) %}
+<label class="radio {{props.classList}}">
+	<input type="radio" name="{{props.name or 'default'}}">
+	<span class="radio__icon">
+		{{mixins.icon('checked')}}
+	</span>
+	{% if props.content %}<span class="radio__content">{{props.content}}</span>{% endif %}
+</label>
+{% endmacro %}
