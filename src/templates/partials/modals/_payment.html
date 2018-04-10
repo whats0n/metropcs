@@ -15,13 +15,14 @@
 						{ label: 'Due Immediately', value: '$63.00' },
 						{ label: 'Other Amount' }
 					] %}
+						{% set value = item.value or '' %}
 						<li class="choice__item">
 							{{form.radio.call({ classList: 'choice__radio', name: 'payment-radio' })}}
 							<div class="choice__label">{{item.label}}:</div>
 							<div class="choice__field">
 								{{form.inputBox.call({
 									placeholder: 'Enter Amount',
-									inputAttrs: 'value="' + item.value + '"',
+									inputAttrs: 'value="' + value + '" data-mask="currency"',
 									inputClassList: 'text-center'
 								})}}
 							</div>
@@ -30,6 +31,7 @@
 				</ul>
 			</div>
 			<div class="v-modal-content__footer">
+				<button class="btn btn_lg btn_red v-modal-content__cancel" data-animation="ripple" data-modal-close>Cancel</button>
 				<button class="btn btn_lg btn_primary v-modal-content__submit" data-animation="ripple" data-modal-close>Make Payment</button>
 			</div>
 		</div>

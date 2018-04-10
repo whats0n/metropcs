@@ -98,7 +98,7 @@
 </label>
                       <div class="choice__label">Account Balance:</div>
                       <div class="choice__field">
-                        <div class="input-box "> <input type="text" class="simple-input input-box__input text-center" placeholder="Enter Amount" value="$120.00"> <button class="input-box__clear" type="button">
+                        <div class="input-box "> <input type="text" class="simple-input input-box__input text-center" placeholder="Enter Amount" value="$120.00" data-mask="currency"> <button class="input-box__clear" type="button">
 		
 <svg class="icon icon-close "><use xlink:href="img/sprite.svg#icon-close"></use></svg>
 
@@ -116,7 +116,7 @@
 </label>
                       <div class="choice__label">Due Immediately:</div>
                       <div class="choice__field">
-                        <div class="input-box "> <input type="text" class="simple-input input-box__input text-center" placeholder="Enter Amount" value="$63.00"> <button class="input-box__clear" type="button">
+                        <div class="input-box "> <input type="text" class="simple-input input-box__input text-center" placeholder="Enter Amount" value="$63.00" data-mask="currency"> <button class="input-box__clear" type="button">
 		
 <svg class="icon icon-close "><use xlink:href="img/sprite.svg#icon-close"></use></svg>
 
@@ -134,7 +134,7 @@
 </label>
                       <div class="choice__label">Other Amount:</div>
                       <div class="choice__field">
-                        <div class="input-box "> <input type="text" class="simple-input input-box__input text-center" placeholder="Enter Amount" value="undefined"> <button class="input-box__clear" type="button">
+                        <div class="input-box "> <input type="text" class="simple-input input-box__input text-center" placeholder="Enter Amount" value="" data-mask="currency"> <button class="input-box__clear" type="button">
 		
 <svg class="icon icon-close "><use xlink:href="img/sprite.svg#icon-close"></use></svg>
 
@@ -143,7 +143,7 @@
                     </li>
                   </ul>
                 </div>
-                <div class="v-modal-content__footer"> <button class="btn btn_lg btn_primary v-modal-content__submit" data-animation="ripple" data-modal-close>Make Payment</button> </div>
+                <div class="v-modal-content__footer"> <button class="btn btn_lg btn_red v-modal-content__cancel" data-animation="ripple" data-modal-close>Cancel</button> <button class="btn btn_lg btn_primary v-modal-content__submit" data-animation="ripple" data-modal-close>Make Payment</button>                  </div>
               </div>
               <!-- end v-modal-content -->
             </div>
