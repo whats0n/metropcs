@@ -30,7 +30,8 @@
 								{% else %}
 									{{form.inputBox.call({
 										placeholder: item.placeholder,
-										inputAttrs: 'value="' + value + '"'
+										inputAttrs: 'value="' + value + '"',
+										inputClassList: 'simple-input_md'
 									})}}
 								{% endif %}
 							</div>
