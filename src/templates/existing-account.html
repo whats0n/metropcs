@@ -71,7 +71,7 @@ footer: {
 								</div>
 							</div>
 							<div class="table__td">
-								<button class="btn btn_primary table__btn" data-animation="ripple" {% if item.disabled %}disabled{% endif %}>Return Device</button>
+								<button class="btn btn_primary table__btn" data-animation="ripple" {% if item.disabled %}disabled{% endif %} data-modal-target="return-device">Return Device</button>
 							</div>
 						</div>
 					{% endfor %}
@@ -82,5 +82,6 @@ footer: {
 
 	{% include 'partials/modals/_payment.html' %}
 	{% include 'partials/modals/_xbm.html' %}
+	{% include 'partials/modals/_return-device.html' %}
 
 {% endblock %}

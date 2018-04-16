@@ -7,18 +7,18 @@
 			<div class="v-modal-content__body">
 				<ul class="fieldset v-modal-content__fieldset">
 					{% for item in [
-						{ label: 'Customer Name', value: 'Prepopulated' },
-						{ label: 'Primary MDN', value: 'Prepopulated' },
-						{ label: 'Secondary MDN', placeholder: 'Enter MDN' },
-						{ label: 'Device Manufacturer', placeholder: 'Enter Manufacturer' },
-						{ label: 'Device Model', value: 'Prepopulated' },
-						{ label: 'ESN/IMEI', value: 'Prepopulated' },
+						{ label: 'Customer Name:', value: 'Prepopulated' },
+						{ label: 'Primary MDN:', value: 'Prepopulated' },
+						{ label: 'Secondary MDN:', placeholder: 'Enter MDN' },
+						{ label: 'Device Manufacturer:', placeholder: 'Enter Manufacturer' },
+						{ label: 'Device Model:', value: 'Prepopulated' },
+						{ label: 'ESN/IMEI:', value: 'Prepopulated' },
 						{ label: 'Does the device have any&nbsp;liquid damage?', radios: 'liquid damage' },
 						{ label: 'Does the device have any&nbsp;physical damage?', radios: 'physical damage' }
 					] %}
 						{% set value = item.value or '' %}
 						<li class="fieldset__item">
-							<div class="fieldset__label">{{item.label | safe}}:</div>
+							<div class="fieldset__label">{{item.label | safe}}</div>
 							<div class="fieldset__field">
 								{% if item.radios %}
 									<div class="fieldset__radio">

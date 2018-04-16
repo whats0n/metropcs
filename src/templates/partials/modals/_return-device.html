@@ -1,0 +1,37 @@
+
+<div class="v-modal v-modal_md" data-modal="return-device">
+	<div class="v-modal__container" data-modal-container>
+		<!-- begin v-modal-content -->
+		<div class="v-modal-content">
+			<div class="v-modal-content__heading">Metro Promise</div>
+			<div class="v-modal-content__body">
+				<ul class="fieldset fieldset_wide v-modal-content__fieldset">
+					{% for item in [
+						{ label: 'Does the device have any&nbsp;liquid damage?', radios: 'liquid damage 1' },
+						{ label: 'Does the device have any&nbsp;physical damage?', radios: 'physical damage 1' },
+						{ label: 'Is the device being returned with all the original contents in like new condition?', radios: 'new condition' },
+						{ label: 'Does the device have less than 60 minutes of talk time?', radios: 'talk time' }
+					] %}
+						{% set value = item.value or '' %}
+						<li class="fieldset__item">
+							<div class="fieldset__label">{{item.label | safe}}</div>
+							<div class="fieldset__field">
+								<div class="fieldset__radio">
+									{{form.radio.call({ content: 'Yes', name: item.radios })}}
+								</div>
+								<div class="fieldset__radio">
+									{{form.radio.call({ content: 'No', name: item.radios })}}
+								</div>
+							</div>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="v-modal-content__footer">
+				<button class="btn btn_lg btn_red v-modal-content__cancel" data-animation="ripple" data-modal-close>Cancel</button>
+				<button class="btn btn_lg btn_green v-modal-content__submit" data-animation="ripple" data-modal-close>Open Portal</button>
+			</div>
+		</div>
+		<!-- end v-modal-content -->
+	</div>
+</div>

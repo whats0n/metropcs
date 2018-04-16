@@ -54,7 +54,7 @@
 <svg class="icon icon-dollar "><use xlink:href="img/sprite.svg#icon-dollar"></use></svg>
 </button> </div>
                     </div>
-                    <div class="table__td"> <button class="btn btn_primary table__btn" data-animation="ripple">Return Device</button> </div>
+                    <div class="table__td"> <button class="btn btn_primary table__btn" data-animation="ripple" data-modal-target="return-device">Return Device</button> </div>
                   </div>
                   <div class="table__tr">
                     <div class="table__td">669-232-3435</div>
@@ -63,7 +63,7 @@
                     <div class="table__td">
                       <div class="tooltip-wrapper"> <button class="btn btn_primary btn_dollar table__btn" data-animation="ripple" data-modal-target="xbm">Create XBM</button> </div>
                     </div>
-                    <div class="table__td"> <button class="btn btn_primary table__btn" data-animation="ripple">Return Device</button> </div>
+                    <div class="table__td"> <button class="btn btn_primary table__btn" data-animation="ripple" data-modal-target="return-device">Return Device</button> </div>
                   </div>
                   <div class="table__tr">
                     <div class="table__td">669-232-3436</div>
@@ -72,7 +72,7 @@
                     <div class="table__td">
                       <div class="tooltip-wrapper"> <button class="btn btn_primary btn_dollar table__btn" data-animation="ripple" data-modal-target="xbm">Create XBM</button> </div>
                     </div>
-                    <div class="table__td"> <button class="btn btn_primary table__btn" data-animation="ripple" disabled>Return Device</button> </div>
+                    <div class="table__td"> <button class="btn btn_primary table__btn" data-animation="ripple" disabled data-modal-target="return-device">Return Device</button> </div>
                   </div>
                 </div>
               </div>
@@ -216,7 +216,7 @@
                       </div>
                     </li>
                     <li class="fieldset__item">
-                      <div class="fieldset__label">Does the device have any&nbsp;liquid damage?:</div>
+                      <div class="fieldset__label">Does the device have any&nbsp;liquid damage?</div>
                       <div class="fieldset__field">
                         <div class="fieldset__radio"> <label class="radio ">
 	<input type="radio" name="liquid damage">
@@ -239,7 +239,7 @@
                       </div>
                     </li>
                     <li class="fieldset__item">
-                      <div class="fieldset__label">Does the device have any&nbsp;physical damage?:</div>
+                      <div class="fieldset__label">Does the device have any&nbsp;physical damage?</div>
                       <div class="fieldset__field">
                         <div class="fieldset__radio"> <label class="radio ">
 	<input type="radio" name="physical damage">
@@ -266,6 +266,112 @@
                     <div class="textbox__label">Briefly describe issue with device?</div> <textarea class="textarea"></textarea> </div>
                 </div>
                 <div class="v-modal-content__footer"> <button class="btn btn_lg btn_red v-modal-content__cancel" data-animation="ripple" data-modal-close>Cancel</button> <button class="btn btn_lg btn_green v-modal-content__submit" data-animation="ripple" data-modal-close>Download to POS</button>                  </div>
+              </div>
+              <!-- end v-modal-content -->
+            </div>
+          </div>
+          <div class="v-modal v-modal_md" data-modal="return-device">
+            <div class="v-modal__container" data-modal-container>
+              <!-- begin v-modal-content -->
+              <div class="v-modal-content">
+                <div class="v-modal-content__heading">Metro Promise</div>
+                <div class="v-modal-content__body">
+                  <ul class="fieldset fieldset_wide v-modal-content__fieldset">
+                    <li class="fieldset__item">
+                      <div class="fieldset__label">Does the device have any&nbsp;liquid damage?</div>
+                      <div class="fieldset__field">
+                        <div class="fieldset__radio"> <label class="radio ">
+	<input type="radio" name="liquid damage 1">
+	<span class="radio__icon">
+		
+<svg class="icon icon-checked "><use xlink:href="img/sprite.svg#icon-checked"></use></svg>
+
+	</span>
+	<span class="radio__content">Yes</span>
+</label> </div>
+                        <div class="fieldset__radio"> <label class="radio ">
+	<input type="radio" name="liquid damage 1">
+	<span class="radio__icon">
+		
+<svg class="icon icon-checked "><use xlink:href="img/sprite.svg#icon-checked"></use></svg>
+
+	</span>
+	<span class="radio__content">No</span>
+</label> </div>
+                      </div>
+                    </li>
+                    <li class="fieldset__item">
+                      <div class="fieldset__label">Does the device have any&nbsp;physical damage?</div>
+                      <div class="fieldset__field">
+                        <div class="fieldset__radio"> <label class="radio ">
+	<input type="radio" name="physical damage 1">
+	<span class="radio__icon">
+		
+<svg class="icon icon-checked "><use xlink:href="img/sprite.svg#icon-checked"></use></svg>
+
+	</span>
+	<span class="radio__content">Yes</span>
+</label> </div>
+                        <div class="fieldset__radio"> <label class="radio ">
+	<input type="radio" name="physical damage 1">
+	<span class="radio__icon">
+		
+<svg class="icon icon-checked "><use xlink:href="img/sprite.svg#icon-checked"></use></svg>
+
+	</span>
+	<span class="radio__content">No</span>
+</label> </div>
+                      </div>
+                    </li>
+                    <li class="fieldset__item">
+                      <div class="fieldset__label">Is the device being returned with all the original contents in like new condition?</div>
+                      <div class="fieldset__field">
+                        <div class="fieldset__radio"> <label class="radio ">
+	<input type="radio" name="new condition">
+	<span class="radio__icon">
+		
+<svg class="icon icon-checked "><use xlink:href="img/sprite.svg#icon-checked"></use></svg>
+
+	</span>
+	<span class="radio__content">Yes</span>
+</label> </div>
+                        <div class="fieldset__radio"> <label class="radio ">
+	<input type="radio" name="new condition">
+	<span class="radio__icon">
+		
+<svg class="icon icon-checked "><use xlink:href="img/sprite.svg#icon-checked"></use></svg>
+
+	</span>
+	<span class="radio__content">No</span>
+</label> </div>
+                      </div>
+                    </li>
+                    <li class="fieldset__item">
+                      <div class="fieldset__label">Does the device have less than 60 minutes of talk time?</div>
+                      <div class="fieldset__field">
+                        <div class="fieldset__radio"> <label class="radio ">
+	<input type="radio" name="talk time">
+	<span class="radio__icon">
+		
+<svg class="icon icon-checked "><use xlink:href="img/sprite.svg#icon-checked"></use></svg>
+
+	</span>
+	<span class="radio__content">Yes</span>
+</label> </div>
+                        <div class="fieldset__radio"> <label class="radio ">
+	<input type="radio" name="talk time">
+	<span class="radio__icon">
+		
+<svg class="icon icon-checked "><use xlink:href="img/sprite.svg#icon-checked"></use></svg>
+
+	</span>
+	<span class="radio__content">No</span>
+</label> </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="v-modal-content__footer"> <button class="btn btn_lg btn_red v-modal-content__cancel" data-animation="ripple" data-modal-close>Cancel</button> <button class="btn btn_lg btn_green v-modal-content__submit" data-animation="ripple" data-modal-close>Open Portal</button>                  </div>
               </div>
               <!-- end v-modal-content -->
             </div>
