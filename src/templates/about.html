@@ -1,0 +1,62 @@
+---
+title: About
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<div class="about">
+		<div class="about__header">
+			<a href="#" class="about__logo">
+				<img src="img/logo-metropcs.svg" alt="MetroPCS">
+			</a>
+		</div>
+		<div class="about__body">
+			<ul class="box">
+				{% for item in [
+					{ label: 'Access Code', value: '10000211' },
+					{ label: 'Product Number', value: '9.6.1.1010' },
+					{ label: 'Client ID', value: '365421' },
+					{ label: 'Build', value: '1018' }
+				] %}
+					<li class="box__item">
+						<div class="label box__label"><strong>{{item.label}}:</strong></div>
+						<div class="box__value">{{item.value}}</div>
+					</li>
+				{% endfor %}
+			</ul>
+			<div class="content">
+				<div class="content__row">
+					<div class="content__col">
+						<div class="label content__label"><strong>Client Support:</strong></div>
+						<div class="content__text">
+							<p>Phone: 212-742-2316</p>
+							<p>boostelevate@b2bsoft.com</p>
+						</div>
+					</div>
+					<div class="content__col">
+						<div class="label content__label"><strong>Web:</strong></div>
+						<div class="content__text">
+							<p><a href="#">www.elevate.b2bsoft.com</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="footer__content">
+					<div class="footer__title"><strong>Warning:</strong></div>
+					<div class="footer__text">
+						<p>This computer software is protected by copyright laws and international treaties.</p>
+					</div>
+				</div>
+				<div class="footer__btn">
+					<button class="btn btn_wide btn_secondary" data-animation="ripple">Ok</button>
+				</div>
+			</div>
+		</div>
+		<div class="about__footer">
+			<p>Copyright 1998-2018. B2B Soft Inc. All Rights Reserved</p>
+		</div>
+	</div>
+
+{% endblock %}

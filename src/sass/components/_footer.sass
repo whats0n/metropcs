@@ -1,16 +1,21 @@
 .footer
-	padding: 40px 20px 20px
-	font-size: 0
+	padding-top: 10px
+	border-top: 1px solid #d5d5d5
 	+clr
-	&__left
+	&__content
 		float: left
-	&__right
-		float: right
+		padding-right: 120px
+		margin-right: -100px
+		width: 100%
+		color: $primary
 	&__btn
-		position: relative
-		display: inline-block
-		vertical-align: top
-		+ .footer__btn
-			margin-left: 20px
-	.btn
-		min-width: 120px
+		float: left
+		padding-top: 8px
+		width: 100px
+	&__title
+		float: left
+		padding-right: 20px
+		font-size: 1.25rem
+	&__text
+		overflow: hidden
+		padding-top: 8px

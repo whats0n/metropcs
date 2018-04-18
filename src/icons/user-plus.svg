@@ -1,7 +1,0 @@
-<?xml version="1.0" ?>
-<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-	<circle cx="16" cy="8" r="7"/>
-	<path d="M23.55,18A11,11,0,0,0,5,26v5H18"/>
-	<line style="stroke: currentColor;" x1="24" x2="24" y1="21" y2="31"/>
-	<line style="stroke: currentColor;" x1="29" x2="19" y1="26" y2="26"/>
-</svg>

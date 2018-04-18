@@ -1,29 +1,5 @@
 ProjectTitle: metro-pcs
 
 PageList:
-- file: first.html
-- file: first-v2.0.html
-- file: second.html
-- file: second-v2.0.html
-- file: second-v2.1.html
-- file: third.html
-- file: third-v1.0.html
-- file: third-v2.0.html
-- file: third-v3.0.html
-- file: third-v3.1.html
-- file: fourth.html
-- file: fifth.html
-- file: fifth-v1.0.html
-- file: fifth-v2.0.html
-- file: fifth-v2.1.html
-- file: fifth-v3.0.html
-- file: fifth-v3.1.html
-- file: modals.html
-- file: new-first.html
-- file: new-second.html
-- file: new-third.html
-- file: third-updated.html
-- file: portal-chooser.html
-- file: account-lookup.html
-- file: confirm-and-download.html
-- file: existing-account.html
+- file: about.html
+- file: upgrade.html

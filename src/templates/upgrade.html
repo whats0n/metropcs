@@ -1,0 +1,37 @@
+---
+title: Upgrade
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<div class="upgrade">
+		<div class="upgrade__header">
+			<div class="upgrade__inner">
+				<div class="upgrade__title">Get More, Do More</div>
+				<div class="upgrade__description">The latest version of MetroPCS is now available</div>
+			</div>
+		</div>
+		<div class="upgrade__body">
+			<div class="upgrade__inner">
+				<div class="upgrade__content">
+					<p>Welcome!</p>
+					<p>You currently have version 9.6.0.0 installed on this computer, while your central system has been upgraded to the new version.</p>
+					<p>Please upgrade you client software to the new version by clicking on the "Upgrade NOW" button if it's available. If you can not or do not want to upgrade right now you can certainly do it at a later time. You will not however be able to use this version to connect to your central system.</p>
+				</div>
+				<div class="upgrade__btns">
+					<button class="btn btn_secondary upgrade__btn" data-animation="ripple">Upgrade Now</button>
+					<button class="btn upgrade__btn" data-animation="ripple">Upgrade Later</button>
+				</div>
+			</div>
+		</div>
+		<div class="upgrade__footer">
+			<div class="upgrade__inner">
+				<a href="#" class="upgrade__logo">
+					<img src="img/logo-metropcs.svg" alt="MetroPCS">
+				</a>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
