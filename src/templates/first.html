@@ -3,7 +3,8 @@ title: Index page
 heading: 'Please choose account type'
 types: [
 	{ icon: 'user-plus', title: 'New Account' },
-	{ icon: 'user', title: 'Existing Account' }
+	{ icon: 'user', title: 'Existing Account' },
+	{ icon: 'lendpro', title: 'LendPro Financing', iconClassList: 'type__btn-icon_fill' }
 ]
 footer: { noPrev: true }
 ---
@@ -16,7 +17,7 @@ footer: { noPrev: true }
 			{% for item in types %}
 				<div class="type__col">
 					<button class="type__btn" data-animation="ripple">
-						<span class="type__btn-icon">{{mixins.icon(item.icon)}}</span>
+						<span class="type__btn-icon {{item.iconClassList}}">{{mixins.icon(item.icon)}}</span>
 						<span class="type__btn-title"><span>{{item.title}}</span></span>
 					</button>
 				</div>

@@ -1,0 +1,31 @@
+---
+title: Index page
+heading: 'Customer info'
+footer: { nextText: 'Continue', noPrev: true }
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<ul class="info">
+		{% for item in [
+			{ label: 'First Name', value: 'John' },
+			{ label: 'Last Name', value: 'Doe' },
+			{ label: 'Phone', value: '0000000000' },
+			{ label: 'Email', value: 'johndoe@gmail.com' },
+			{ label: 'Address1', value: 'Kiev' },
+			{ label: 'Address2', value: 'Kiev' },
+			{ label: 'City', value: 'Kiev' },
+			{ label: 'State', value: 'N/A' },
+			{ label: 'Zip', value: '02002' },
+			{ label: 'Credit Limit', value: '0.00' },
+			{ label: 'Message', value: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae praesentium, repellendus delectus earum modi nesciunt illo suscipit corporis possimus quo.' }
+		] %}
+			<li class="info__item">
+				<div class="info__label">{{item.label}}:</div>
+				<div class="info__value">{{item.value}}</div>
+			</li>
+		{% endfor %}
+	</ul>
+
+{% endblock %}

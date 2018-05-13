@@ -27,3 +27,6 @@ PageList:
 - file: account-lookup.html
 - file: confirm-and-download.html
 - file: existing-account.html
+- file: customer-lookup.html
+- file: customer-info.html
+- file: financing.html
