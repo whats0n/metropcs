@@ -18,13 +18,21 @@ footer: {
 {% block content %}
 	
 	<div class="type">
+		<a href="#" class="type__help">
+			{{mixins.icon('question-option')}}
+		</a>
 		<div class="type__row">
 			{% for item in types %}
 				<div class="type__col">
-					<button class="type__btn" data-animation="ripple">
+					<button class="type__btn tooltip-control" data-animation="ripple">
 						<span class="type__btn-icon type__btn-icon_fill">{{mixins.icon(item.icon)}}</span>
 						<span class="type__btn-title"><span>{{item.title}}</span></span>
 					</button>
+					<div class="tooltip tooltip_top tooltip_center tooltip_md type__tooltip">
+						<div class="tooltip__inner">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, similique!</p>
+						</div>
+					</div>
 				</div>
 			{% endfor %}
 		</div>

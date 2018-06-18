@@ -26,6 +26,7 @@
 		margin: -20px
 		font-size: 0
 	&__col
+		position: relative
 		display: inline-block
 		vertical-align: top
 		width: 200px
@@ -71,3 +72,25 @@
 				vertical-align: middle
 				font-size: 16px
 				line-height: 1
+	.type__tooltip
+		top: 0
+		bottom: auto
+		transform: translate3d(-50%, 0, 0)
+	&__help
+		position: absolute
+		top: 5px
+		right: 5px
+		border-radius: 50%
+		width: 50px
+		height: 50px
+		+vertical
+		transition: background 0.25s, box-shadow 0.25s
+		&:hover
+			background: rgba($secondary, 0.1)
+		&:active
+			background: rgba($secondary, 0.1)
+			box-shadow: inset 2px 2px 6px rgba(0,0,0,.2)
+		.icon
+			vertical-align: middle
+			fill: $primary
+			font-size: 30px
