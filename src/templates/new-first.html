@@ -12,15 +12,14 @@ footer: {
 	noPrev: true,
 	noNext: true
 }
+
+headingHelp: true
 ---
 {% extends "layouts/_layout.html" %}
 
 {% block content %}
 	
 	<div class="type">
-		<a href="#" class="type__help">
-			{{mixins.icon('question-option')}}
-		</a>
 		<div class="type__row">
 			{% for item in types %}
 				<div class="type__col">
