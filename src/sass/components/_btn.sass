@@ -11,6 +11,7 @@
 	color: $darkGray
 	background: $lightGray
 	
+	font-family: 'Roboto', Arial, sans-serif
 	font-size: 16px
 	font-weight: 300
 	line-height: 40px
@@ -60,38 +61,4 @@
 	&.is-disabled
 		opacity: 0.5
 		pointer-events: none
-	&_dollar
-		position: relative
-		padding-left: 30px
-		padding-right: 30px
-		+sm 
-			padding-left: 20px
-			padding-right: 20px
-	.icon-dollar
-		position: absolute
-		top: 50%
-		left: 15px
-		margin-top: -0.55em
-		fill: $white
-		font-size: 16px
-		+sm 
-			left: 8px
-
-
-.btn-delete
-	display: inline-block
-	vertical-align: top
-	width: 60px
-	height: 60px
-	background: none
-	font-size: 0
-	line-height: 60px
-	&:active
-		svg
-			fill: darken($red, 15%)
-	svg
-		display: inline-block
-		vertical-align: middle
-		fill: $red
-		font-size: 18px
 
