@@ -1,0 +1,125 @@
+---
+title: Index page
+heading: 'Confirm & Download to POS - TSET DO NOT USE'
+step: 2
+footer: {
+	noPrev: true,
+	nextText: 'Continue'
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<div class="grid">
+		<div class="grid__body">
+			<div class="table">
+				<div class="table__thead">
+					<div class="table__tr">
+						<div class="table__th">MDN</div>
+						<div class="table__th">Device</div>
+						<div class="table__th">Contract Type</div>
+						<div class="table__th">Promo</div>
+						<div class="table__td" data-column="edit-controls"></div>
+					</div>
+				</div>
+				<div class="table__tbody" data-add-line>
+					{% for item in range(0,6) %}
+						<div class="table__tr" data-edit data-add-line-row>
+							<div class="table__td">
+								<div class="table__td-static">
+									<div>TSET DO NOT USE</div>
+									<div><small>2147150290</small></div>
+								</div>
+								<div class="table__td-edit">
+									<div class="table__label">Customer Name</div>
+									<div class="table__td-field">
+										<input type="text" class="simple-input simple-input_md">
+									</div>
+									<div class="table__label">Customer MDN</div>
+									<div class="table__td-field">
+										<input type="text" class="simple-input simple-input_md">
+									</div>
+								</div>
+							</div>
+							<div class="table__td">
+								<div class="table__td-static">
+									<div>KYO HYD WAVE</div>
+									<div><small>IMEI: 990004418339168</small></div>
+								</div>
+								<div class="table__td-edit">
+									<div class="table__label">Phone Serial #</div>
+									<div class="table__td-field">
+										<input type="text" class="simple-input simple-input_md">
+									</div>
+									<div class="table__label">SIM Serial #</div>
+									<div class="table__td-field">
+										<input type="text" class="simple-input simple-input_md">
+									</div>
+								</div>
+							</div>
+							<div class="table__td">
+								<div class="table__td-static">
+									<div>Type 1</div>
+								</div>
+								<div class="table__td-edit">
+									<div class="table__label">Service Plan</div>
+									{{form.select.call({
+										classList: 'select_md table__td-field',
+										options: [
+											'Item 1',
+											'Item 2',
+											'Item 3',
+											'Item 4'
+										]
+									})}}
+									<div class="table__label">Contract Type</div>
+									{{form.select.call({
+										classList: 'select_md table__td-field',
+										options: [
+											'Item 1',
+											'Item 2',
+											'Item 3',
+											'Item 4'
+										]
+									})}}
+								</div>
+							</div>
+							<div class="table__td">
+								<div class="table__td-static">
+									<div>EDLP rebate</div>
+								</div>
+								<div class="table__td-edit">
+									<div class="table__label">Promos</div>
+									{{form.select.call({
+										classList: 'select_md table__td-field',
+										options: [
+											'Item 1',
+											'Item 2',
+											'Item 3',
+											'Item 4'
+										]
+									})}}
+								</div>
+							</div>
+							<div class="table__td" data-column="edit-controls">
+								<div class="table__td-static">
+									<button class="table__success" data-edit-open>{{mixins.icon('edit', 'table__edit')}}</button>
+									<button class="table__remove">{{mixins.icon('close', 'table__close')}}</button>
+								</div>
+								<div class="table__td-edit">
+									<button class="table__success" data-edit-close>{{mixins.icon('checked', 'table__checked')}}</button>
+									<button class="table__remove" data-edit-close>{{mixins.icon('close', 'table__close')}}</button>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="grid__footer">
+				<button class="btn btn_lg btn_primary" data-animation="ripple" data-add-line-control>Add Line</button>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

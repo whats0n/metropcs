@@ -45,10 +45,13 @@
 			+sm 
 				padding-right: 10px
 		+col('checkbox')
-			width: 101px
+			width: 100px
 			text-align: left
 			+sm 
 				width: 70px
+		+col('edit-controls')
+			width: 101px
+			font-size: 0
 		+col('financed')
 			width: 150px
 	&__th
@@ -68,3 +71,45 @@
 			max-width: 100%
 			width: 100px
 			font-size: 14px
+	&__tr.is-editing
+		.table__td 
+			vertical-align: top
+		.table__td-static
+			display: none
+		.table__td-edit
+			display: block
+	&__td-edit
+		display: none
+	&__td-field
+		&:not(:last-child)
+			margin-bottom: 10px
+	&__label
+		margin-bottom: 4px
+		text-align: left
+	&__remove,
+	&__success
+		display: inline-block
+		vertical-align: top
+		width: 50%
+		height: 40px
+		+vertical
+		transition: color 0.25s
+	&__remove
+		&:hover
+			color: $red
+		&:active
+			color: $redActive
+	&__success
+		&:hover
+			color: $secondary
+		&:active
+			color: $secondaryActive
+	&__edit,
+	&__close,
+	&__checked
+		display: inline-block
+		vertical-align: middle
+		fill: currentColor
+		font-size: 18px
+	&__checked
+		font-size: 22px

@@ -30,3 +30,4 @@ PageList:
 - file: customer-lookup.html
 - file: customer-info.html
 - file: financing.html
+- file: summary-page.html

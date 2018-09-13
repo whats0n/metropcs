@@ -39,9 +39,9 @@
 /**
  * filesize
  *
- * @copyright 2017 Jason Mulligan <jason.mulligan@avoidwork.com>
+ * @copyright 2018 Jason Mulligan <jason.mulligan@avoidwork.com>
  * @license BSD-3-Clause
- * @version 3.5.11
+ * @version 3.6.1
  */
 (function (global) {
 	var b = /^(b|B)$/,
@@ -84,6 +84,7 @@
 		    output = void 0,
 		    round = void 0,
 		    unix = void 0,
+		    separator = void 0,
 		    spacer = void 0,
 		    standard = void 0,
 		    symbols = void 0;
@@ -95,14 +96,15 @@
 		bits = descriptor.bits === true;
 		unix = descriptor.unix === true;
 		base = descriptor.base || 2;
-		round = descriptor.round !== undefined ? descriptor.round : unix ? 1 : 2;
-		spacer = descriptor.spacer !== undefined ? descriptor.spacer : unix ? "" : " ";
+		round = descriptor.round !== void 0 ? descriptor.round : unix ? 1 : 2;
+		separator = descriptor.separator !== void 0 ? descriptor.separator || "" : "";
+		spacer = descriptor.spacer !== void 0 ? descriptor.spacer : unix ? "" : " ";
 		symbols = descriptor.symbols || descriptor.suffixes || {};
 		standard = base === 2 ? descriptor.standard || "jedec" : "jedec";
 		output = descriptor.output || "string";
 		full = descriptor.fullform === true;
 		fullforms = descriptor.fullforms instanceof Array ? descriptor.fullforms : [];
-		e = descriptor.exponent !== undefined ? descriptor.exponent : -1;
+		e = descriptor.exponent !== void 0 ? descriptor.exponent : -1;
 		num = Number(arg);
 		neg = num < 0;
 		ceil = base > 2 ? 1000 : 1024;
@@ -178,6 +180,10 @@
 
 		if (full) {
 			result[1] = fullforms[e] ? fullforms[e] : fullform[standard][e] + (bits ? "bit" : "byte") + (result[0] === 1 ? "" : "s");
+		}
+
+		if (separator.length > 0) {
+			result[0] = result[0].toString().replace(".", separator);
 		}
 
 		return result.join(spacer);
@@ -2043,7 +2049,7 @@ onGroupTransform:[],onGroupTransformEnd:[],onKeyUp:[],selection:null,open:null,e
   <body>
     <div id="treemap" class="treemap"></div>
     <script>
-      window.chartData = [{"label":"app.js","weight":1301975,"statSize":474304,"parsedSize":1301975,"groups":[{"label":"node_modules","path":"./node_modules","weight":1277404,"statSize":465211,"parsedSize":1277404,"groups":[{"label":"inputmask","path":"./node_modules/inputmask","weight":484286,"statSize":190998,"parsedSize":484286,"groups":[{"label":"dist","path":"./node_modules/inputmask/dist","weight":482356,"statSize":190444,"parsedSize":482356,"groups":[{"label":"inputmask","path":"./node_modules/inputmask/dist/inputmask","weight":482356,"statSize":190444,"parsedSize":482356,"groups":[{"label":"dependencyLibs","path":"./node_modules/inputmask/dist/inputmask/dependencyLibs","weight":25071,"statSize":9637,"parsedSize":25071,"groups":[{"id":0,"label":"inputmask.dependencyLib.js","path":"./node_modules/inputmask/dist/inputmask/dependencyLibs/inputmask.dependencyLib.js","weight":25071,"statSize":9637,"parsedSize":25071}]},{"id":1,"label":"inputmask.js","path":"./node_modules/inputmask/dist/inputmask/inputmask.js","weight":305670,"statSize":123383,"parsedSize":305670},{"label":"global","path":"./node_modules/inputmask/dist/inputmask/global","weight":3606,"statSize":728,"parsedSize":3606,"groups":[{"id":3,"label":"document.js","path":"./node_modules/inputmask/dist/inputmask/global/document.js","weight":1812,"statSize":367,"parsedSize":1812},{"id":4,"label":"window.js","path":"./node_modules/inputmask/dist/inputmask/global/window.js","weight":1794,"statSize":361,"parsedSize":1794}]},{"id":11,"label":"inputmask.date.extensions.js","path":"./node_modules/inputmask/dist/inputmask/inputmask.date.extensions.js","weight":63427,"statSize":24422,"parsedSize":63427},{"id":12,"label":"inputmask.extensions.js","path":"./node_modules/inputmask/dist/inputmask/inputmask.extensions.js","weight":10219,"statSize":3429,"parsedSize":10219},{"id":13,"label":"inputmask.numeric.extensions.js","path":"./node_modules/inputmask/dist/inputmask/inputmask.numeric.extensions.js","weight":63370,"statSize":24911,"parsedSize":63370},{"id":14,"label":"inputmask.phone.extensions.js","path":"./node_modules/inputmask/dist/inputmask/inputmask.phone.extensions.js","weight":10993,"statSize":3934,"parsedSize":10993}]}]},{"id":15,"label":"index.js","path":"./node_modules/inputmask/index.js","weight":1930,"statSize":554,"parsedSize":1930}]},{"label":"jquery","path":"./node_modules/jquery","weight":776759,"statSize":268039,"parsedSize":776759,"groups":[{"label":"dist","path":"./node_modules/jquery/dist","weight":776759,"statSize":268039,"parsedSize":776759,"groups":[{"id":2,"label":"jquery.js","path":"./node_modules/jquery/dist/jquery.js","weight":776759,"statSize":268039,"parsedSize":776759}]}]},{"label":"svg4everybody","path":"./node_modules/svg4everybody","weight":16359,"statSize":6174,"parsedSize":16359,"groups":[{"label":"dist","path":"./node_modules/svg4everybody/dist","weight":16359,"statSize":6174,"parsedSize":16359,"groups":[{"id":6,"label":"svg4everybody.js","path":"./node_modules/svg4everybody/dist/svg4everybody.js","weight":16359,"statSize":6174,"parsedSize":16359}]}]}]},{"label":"src","path":"./src","weight":24571,"statSize":9093,"parsedSize":24571,"groups":[{"label":"js","path":"./src/js","weight":24571,"statSize":9093,"parsedSize":24571,"groups":[{"label":"components","path":"./src/js/components","weight":5276,"statSize":1660,"parsedSize":5276,"groups":[{"id":5,"label":"index.js","path":"./src/js/components/index.js","weight":526,"statSize":55,"parsedSize":526},{"id":8,"label":"mask.js","path":"./src/js/components/mask.js","weight":1450,"statSize":459,"parsedSize":1450},{"id":9,"label":"select.js","path":"./src/js/components/select.js","weight":3300,"statSize":1146,"parsedSize":3300}]},{"id":7,"label":"app.js","path":"./src/js/app.js","weight":18251,"statSize":7155,"parsedSize":18251},{"id":10,"label":"constants.js","path":"./src/js/constants.js","weight":1044,"statSize":278,"parsedSize":1044}]}]}]}];
+      window.chartData = [{"label":"app.js","weight":1314083,"statSize":478559,"parsedSize":1314083,"groups":[{"label":"node_modules","path":"./node_modules","weight":1287610,"statSize":468923,"parsedSize":1287610,"groups":[{"label":"inputmask","path":"./node_modules/inputmask","weight":484286,"statSize":190998,"parsedSize":484286,"groups":[{"label":"dist","path":"./node_modules/inputmask/dist","weight":482356,"statSize":190444,"parsedSize":482356,"groups":[{"label":"inputmask","path":"./node_modules/inputmask/dist/inputmask","weight":482356,"statSize":190444,"parsedSize":482356,"groups":[{"label":"dependencyLibs","path":"./node_modules/inputmask/dist/inputmask/dependencyLibs","weight":25071,"statSize":9637,"parsedSize":25071,"groups":[{"id":0,"label":"inputmask.dependencyLib.js","path":"./node_modules/inputmask/dist/inputmask/dependencyLibs/inputmask.dependencyLib.js","weight":25071,"statSize":9637,"parsedSize":25071}]},{"id":1,"label":"inputmask.js","path":"./node_modules/inputmask/dist/inputmask/inputmask.js","weight":305670,"statSize":123383,"parsedSize":305670},{"label":"global","path":"./node_modules/inputmask/dist/inputmask/global","weight":3606,"statSize":728,"parsedSize":3606,"groups":[{"id":3,"label":"document.js","path":"./node_modules/inputmask/dist/inputmask/global/document.js","weight":1812,"statSize":367,"parsedSize":1812},{"id":4,"label":"window.js","path":"./node_modules/inputmask/dist/inputmask/global/window.js","weight":1794,"statSize":361,"parsedSize":1794}]},{"id":12,"label":"inputmask.date.extensions.js","path":"./node_modules/inputmask/dist/inputmask/inputmask.date.extensions.js","weight":63427,"statSize":24422,"parsedSize":63427},{"id":13,"label":"inputmask.extensions.js","path":"./node_modules/inputmask/dist/inputmask/inputmask.extensions.js","weight":10219,"statSize":3429,"parsedSize":10219},{"id":14,"label":"inputmask.numeric.extensions.js","path":"./node_modules/inputmask/dist/inputmask/inputmask.numeric.extensions.js","weight":63370,"statSize":24911,"parsedSize":63370},{"id":15,"label":"inputmask.phone.extensions.js","path":"./node_modules/inputmask/dist/inputmask/inputmask.phone.extensions.js","weight":10993,"statSize":3934,"parsedSize":10993}]}]},{"id":16,"label":"index.js","path":"./node_modules/inputmask/index.js","weight":1930,"statSize":554,"parsedSize":1930}]},{"label":"jquery","path":"./node_modules/jquery","weight":786965,"statSize":271751,"parsedSize":786965,"groups":[{"label":"dist","path":"./node_modules/jquery/dist","weight":786965,"statSize":271751,"parsedSize":786965,"groups":[{"id":2,"label":"jquery.js","path":"./node_modules/jquery/dist/jquery.js","weight":786965,"statSize":271751,"parsedSize":786965}]}]},{"label":"svg4everybody","path":"./node_modules/svg4everybody","weight":16359,"statSize":6174,"parsedSize":16359,"groups":[{"label":"dist","path":"./node_modules/svg4everybody/dist","weight":16359,"statSize":6174,"parsedSize":16359,"groups":[{"id":6,"label":"svg4everybody.js","path":"./node_modules/svg4everybody/dist/svg4everybody.js","weight":16359,"statSize":6174,"parsedSize":16359}]}]}]},{"label":"src","path":"./src","weight":26473,"statSize":9636,"parsedSize":26473,"groups":[{"label":"js","path":"./src/js","weight":26473,"statSize":9636,"parsedSize":26473,"groups":[{"label":"components","path":"./src/js/components","weight":7178,"statSize":2203,"parsedSize":7178,"groups":[{"id":5,"label":"index.js","path":"./src/js/components/index.js","weight":590,"statSize":75,"parsedSize":590},{"id":8,"label":"edit.js","path":"./src/js/components/edit.js","weight":1833,"statSize":523,"parsedSize":1833},{"id":9,"label":"mask.js","path":"./src/js/components/mask.js","weight":1450,"statSize":459,"parsedSize":1450},{"id":10,"label":"select.js","path":"./src/js/components/select.js","weight":3305,"statSize":1146,"parsedSize":3305}]},{"id":7,"label":"app.js","path":"./src/js/app.js","weight":18251,"statSize":7155,"parsedSize":18251},{"id":11,"label":"constants.js","path":"./src/js/constants.js","weight":1044,"statSize":278,"parsedSize":1044}]}]}]}];
     </script>
   </body>
 </html>
