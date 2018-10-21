@@ -25,6 +25,7 @@ PageList:
 - file: third-updated.html
 - file: portal-chooser.html
 - file: account-lookup.html
+- file: account-lookup-v2.html
 - file: confirm-and-download.html
 - file: existing-account.html
 - file: customer-lookup.html

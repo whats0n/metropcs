@@ -1,0 +1,61 @@
+---
+title: Index page
+heading: 'MetroPCS Account Lookup'
+step: 2
+footer: {
+	nextTooltip: 'Access Account Balance, Upgrade Eligibility and additional information by clicking Continue',
+	nextText: 'Continue'
+}
+types: [
+	{ icon: 'activation', title: 'Create New Account', iconClassList: 'type__btn-icon_fill' },
+	{ icon: 'sales-quote', title: 'Sales Quote / Preauthorization', iconClassList: 'type__btn-icon_fill' },
+	{ icon: 'lendpro', title: 'LendPro Financing', iconClassList: 'type__btn-icon_fill' }
+]
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<div class="form form_md">
+		<form action="/">
+			<div class="form__title text-center">The new Metro by T-Mobile plans are AVAILABLE NOW!<br/>Check Edge to see what customer qualifies for and switch them today!</div>
+			<div class="form__row">
+				<div class="form__col form__col_top">
+					<div class="form__frame">
+						<div class="form__field">
+							<label class="form__label">IMEI:</label>
+							{{form.inputBox.call({
+								placeholder: 'Input IMEI'
+							})}}
+						</div>
+						<div class="form__field">
+							<label class="form__label">PIN:</label>
+							{{form.inputBox.call({
+								placeholder: 'Input PIN'
+							})}}
+						</div>
+						<div class="form__field">
+							<label class="form__label">Forgot PIN?</label>
+							<div>
+								<button class="btn btn_lg btn_block">Get security questions</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form__col form__col_top">
+					<div class="form__row">
+						{% for item in types %}
+							<div class="form__col form__field">
+								<button class="type__btn" data-animation="ripple">
+									<span class="type__btn-icon {{item.iconClassList}}">{{mixins.icon(item.icon)}}</span>
+									<span class="type__btn-title"><span>{{item.title}}</span></span>
+								</button>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+
+{% endblock %}
