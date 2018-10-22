@@ -1,6 +1,6 @@
 ---
 title: Index page
-heading: 'MetroPCS Account Lookup'
+heading: 'Metro by T-Mobile'
 step: 2
 footer: {
 	nextTooltip: 'Access Account Balance, Upgrade Eligibility and additional information by clicking Continue',
@@ -11,6 +11,7 @@ types: [
 	{ icon: 'sales-quote', title: 'Sales Quote / Preauthorization', iconClassList: 'type__btn-icon_fill' },
 	{ icon: 'lendpro', title: 'LendPro Financing', iconClassList: 'type__btn-icon_fill' }
 ]
+noFooterButtons: true
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -22,6 +23,7 @@ types: [
 			<div class="form__row">
 				<div class="form__col form__col_top">
 					<div class="form__frame">
+						<div class="form__title text-center">Account Lookup</div>
 						<div class="form__field">
 							<label class="form__label">IMEI:</label>
 							{{form.inputBox.call({
@@ -37,7 +39,18 @@ types: [
 						<div class="form__field">
 							<label class="form__label">Forgot PIN?</label>
 							<div>
-								<button class="btn btn_lg btn_block">Get security questions</button>
+								<button class="btn btn_lg btn_block" data-animation="ripple">Get security questions</button>
+							</div>
+						</div>
+						<div class="form__field">
+							<div class="tooltip-wrapper">
+								<div class="tooltip tooltip_right">
+									<div class="tooltip__inner">
+										{{mixins.icon('information', 'tooltip__icon')}}
+										<p>{{footer.nextTooltip | safe}}</p>
+									</div>
+								</div>
+								<button class="btn btn_lg btn_primary btn_block" data-animation="ripple">Lookup Account</button>
 							</div>
 						</div>
 					</div>
