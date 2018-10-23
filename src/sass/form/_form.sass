@@ -58,9 +58,11 @@
 					padding: 0 5px
 				&__hidden
 					padding: 8px 5px 0
-			&
 		&_wide
 			max-width: none
+		&_simple
+			&:not(:last-child)
+				padding-bottom: 15px
 	a
 		color: $primary
 		font-weight: 300
@@ -95,6 +97,19 @@
 				padding-bottom: 0
 		&_sticky
 			padding-bottom: 0 !important
+		&_simple
+			margin: 0 -5px
+			+sm 
+				margin: 0 -5px
+			&:not(:last-child)
+				padding-bottom: 15px
+				+md
+					padding-bottom: 0
+				+sm 
+					padding-bottom: 15px
+			.form__col
+				padding-left: 5px
+				padding-right: 5px
 	&__col,
 	&__divider
 		display: inline-block
@@ -112,6 +127,19 @@
 			padding: 18px 0
 			+sm 
 				padding: 0
+		&_input
+			width: 60%
+		&_button
+			width: 40%
+		&_input,
+		&_button
+			+md
+				padding-bottom: 15px
+				width: 100%
+			+sm
+				display: inline-block
+				padding-bottom: 0
+				width: 50%
 	&__divider
 		padding-bottom: 30px
 		font-size: 16px
@@ -153,5 +181,5 @@
 		+f(22, 22, null, 500)
 		text-align: center	
 	&__frame
-		padding: 25px 40px
+		padding: 15px 40px 20px
 		border: 2px solid $primary

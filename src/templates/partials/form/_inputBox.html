@@ -1,10 +1,13 @@
 {% import "partials/_mixins.html" as mixins %}
 
 {% macro call(props) %}
-<div class="input-box {{props.classList}}">
+<div class="input-box {{props.classList}} {% if props.animated %}input-box_animated js-field{% endif %}">
+	{% if props.animated %}
+		<span class="input-box__label">{{props.placeholder}}</span>
+	{% endif %}
 	<input type="{{props.type or 'text'}}" 
-		class="simple-input input-box__input {{props.inputClassList}}" 
-		placeholder="{{props.placeholder}}" {{props.inputAttrs | safe}}>
+		class="simple-input input-box__input {{props.inputClassList}} {% if props.animated %}js-field-input{% endif %}" 
+		{% if not props.animated %}placeholder="{{props.placeholder}}"{% endif %} {{props.inputAttrs | safe}}>
 	<button class="input-box__clear" type="button">
 		{{mixins.icon('close')}}
 	</button>

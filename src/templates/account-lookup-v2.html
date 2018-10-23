@@ -12,6 +12,7 @@ types: [
 	{ icon: 'lendpro', title: 'LendPro Financing', iconClassList: 'type__btn-icon_fill' }
 ]
 noFooterButtons: true
+boxInnerClassList: 'box__inner_simple'
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -24,25 +25,34 @@ noFooterButtons: true
 				<div class="form__col form__col_top">
 					<div class="form__frame">
 						<div class="form__title text-center">Account Lookup</div>
-						<div class="form__field">
-							<label class="form__label">IMEI:</label>
+						<div class="form__field form__field_simple">
 							{{form.inputBox.call({
-								placeholder: 'Input IMEI'
+								animated:  true,
+								placeholder: 'IMEI:'
 							})}}
 						</div>
-						<div class="form__field">
-							<label class="form__label">PIN:</label>
-							{{form.inputBox.call({
-								placeholder: 'Input PIN'
-							})}}
+						<div class="form__row form__row_simple">
+							<div class="form__col form__col_input">
+								<div class="form__field form__field_simple">
+									{{form.inputBox.call({
+										animated:  true,
+										placeholder: 'PIN:'
+									})}}
+								</div>
+							</div>
+							<div class="form__col form__col_button">
+								<div class="form__field form__field_simple">
+									<button class="btn btn_lg btn_secondary btn_block" data-animation="ripple">Send PIN</button>
+								</div>
+							</div>
 						</div>
-						<div class="form__field">
+						<div class="form__field form__field_simple">
 							<label class="form__label">Forgot PIN?</label>
 							<div>
 								<button class="btn btn_lg btn_block" data-animation="ripple">Get security questions</button>
 							</div>
 						</div>
-						<div class="form__field">
+						<div class="form__field form__field_simple">
 							<div class="tooltip-wrapper">
 								<div class="tooltip tooltip_right">
 									<div class="tooltip__inner">
