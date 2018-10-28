@@ -1,0 +1,22 @@
+<!-- begin v-modal-content -->
+<div class="v-modal-content is-error text-center">
+	<button class="v-modal-content__close" onclick="closeModal(event, 'notification')">
+		{{mixins.icon('close')}}
+	</button>
+	<div class="v-modal-content__heading">Google One  & Amazon Prime Installation</div>
+	<div class="v-modal-content__body">
+		<p>You are on your way to activating Google One and/or Amazon Prime for your customer. Please take a moment to install the mobile app(s) on the customers device.</p>
+		<p><a href="#">Installation Instructions</a></p>
+		<p>Did you complete the installation for your customer?</p>
+	</div>
+	<div class="v-modal-content__footer">
+		<div class="v-modal-content__btns">
+			<button class="btn btn_primary v-modal-content__btn" onclick="closeModal(event, 'notification')" data-animation="ripple">Yes</button>
+			<button class="btn btn_primary v-modal-content__btn" onclick="closeModal(event, 'notification')" data-animation="ripple">No</button>
+		</div>
+	</div>
+	<div class="error-message v-modal-content__error-message">
+		*Note: Failing to install and activate Google One and/or Amazon Prime for your customer may affect your compensation
+	</div>
+</div>
+<!-- end v-modal-content -->

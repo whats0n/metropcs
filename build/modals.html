@@ -15,6 +15,9 @@
     <ul class="v-modals-list">
       <li><a href="javascript:void(0)" onclick="openModal(event, 'error-question');">There is no security question.</a></li>
       <li><a href="javascript:void(0)" onclick="openModal(event, 'upgrade-eligibility');">Upgrade Eligibility.</a></li>
+      <li><a href="javascript:void(0)" onclick="openModal(event, 'notification');">Notification</a></li>
+      <li><a href="javascript:void(0)" onclick="openModal(event, 'notification-no');">Notification-No</a></li>
+      <li><a href="javascript:void(0)" onclick="openModal(event, 'notification-yes');">Notification-Yes</a></li>
     </ul>
     <div class="v-modal v-modal_sm" data-modal-id="error-question" onclick="closeModalOnContainer(event);">
       <div class="v-modal__container">
@@ -88,6 +91,122 @@
           <div class="v-modal-content__footer">
             <button class="btn btn_primary text-uppercase v-modal-content__submit" onclick="closeModal(event, 'error-question')" data-animation="ripple">OK</button>
           </div>
+        </div>
+        <!-- end v-modal-content -->
+      </div>
+    </div>
+    <div class="v-modal v-modal_md" data-modal-id="notification" onclick="closeModalOnContainer(event);">
+      <div class="v-modal__container">
+        <!-- begin v-modal-content -->
+        <div class="v-modal-content is-error text-center">
+          <button class="v-modal-content__close" onclick="closeModal(event, 'notification')">
+            <svg class="icon icon-close ">
+              <use xlink:href="img/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+          <div class="v-modal-content__heading">Google One & Amazon Prime Installation</div>
+          <div class="v-modal-content__body">
+            <p>You are on your way to activating Google One and/or Amazon Prime for your customer. Please take a moment to install the mobile app(s) on the customers device.</p>
+            <p><a href="#">Installation Instructions</a></p>
+            <p>Did you complete the installation for your customer?</p>
+          </div>
+          <div class="v-modal-content__footer">
+            <div class="v-modal-content__btns">
+              <button class="btn btn_primary v-modal-content__btn" onclick="closeModal(event, 'notification')" data-animation="ripple">Yes</button>
+              <button class="btn btn_primary v-modal-content__btn" onclick="closeModal(event, 'notification')" data-animation="ripple">No</button>
+            </div>
+          </div>
+          <div class="error-message v-modal-content__error-message"> *Note: Failing to install and activate Google One and/or Amazon Prime for your customer may affect your compensation </div>
+        </div>
+        <!-- end v-modal-content -->
+      </div>
+    </div>
+    <div class="v-modal v-modal_md" data-modal-id="notification-no" onclick="closeModalOnContainer(event);">
+      <div class="v-modal__container">
+        <!-- begin v-modal-content -->
+        <div class="v-modal-content is-error text-center">
+          <button class="v-modal-content__close" onclick="closeModal(event, 'notification-no')">
+            <svg class="icon icon-close ">
+              <use xlink:href="img/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+          <div class="v-modal-content__heading">Google One & Amazon Prime Installation</div>
+          <div class="v-modal-content__body">
+            <p>Please enter the email address you used to activate the customers <br>Google One/Amazon Prime account:</p>
+            <ul class="fieldset v-modal-content__fieldset">
+              <li class="fieldset__item fieldset__item_simple">
+                <div class="fieldset__label">MDN #1:</div>
+                <div class="fieldset__field">
+                  <div class="input-box  ">
+                    <input type="text" class="simple-input input-box__input simple-input_md " placeholder="Please enter customers E-mail address">
+                    <button class="input-box__clear" type="button">
+                      <svg class="icon icon-close ">
+                        <use xlink:href="img/sprite.svg#icon-close"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </li>
+              <li class="fieldset__item fieldset__item_simple">
+                <div class="fieldset__label">MDN #2:</div>
+                <div class="fieldset__field">
+                  <div class="input-box  ">
+                    <input type="text" class="simple-input input-box__input simple-input_md " placeholder="Please enter customers E-mail address">
+                    <button class="input-box__clear" type="button">
+                      <svg class="icon icon-close ">
+                        <use xlink:href="img/sprite.svg#icon-close"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </li>
+              <li class="fieldset__item fieldset__item_simple">
+                <div class="fieldset__label">MDN #3:</div>
+                <div class="fieldset__field">
+                  <div class="input-box  ">
+                    <input type="text" class="simple-input input-box__input simple-input_md " placeholder="Please enter customers E-mail address">
+                    <button class="input-box__clear" type="button">
+                      <svg class="icon icon-close ">
+                        <use xlink:href="img/sprite.svg#icon-close"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="v-modal-content__footer">
+            <div class="v-modal-content__btns">
+              <button class="btn v-modal-content__btn" onclick="closeModal(event, 'notification-no')" data-animation="ripple">Back</button>
+              <button class="btn btn_primary v-modal-content__btn" onclick="closeModal(event, 'notification-no')" data-animation="ripple">Continue</button>
+            </div>
+          </div>
+          <div class="error-message v-modal-content__error-message"> *Note: Failing to install and activate Google One and/or Amazon Prime for your customer may affect your compensation </div>
+        </div>
+        <!-- end v-modal-content -->
+      </div>
+    </div>
+    <div class="v-modal v-modal_md" data-modal-id="notification-yes" onclick="closeModalOnContainer(event);">
+      <div class="v-modal__container">
+        <!-- begin v-modal-content -->
+        <div class="v-modal-content is-error text-center">
+          <button class="v-modal-content__close" onclick="closeModal(event, 'notification-yes')">
+            <svg class="icon icon-close ">
+              <use xlink:href="img/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+          <div class="v-modal-content__heading">Google One & Amazon Prime Installation</div>
+          <div class="v-modal-content__body">
+            <p>Please enter the reason why you were unable to install and activate your customers Google One and/or Amazon prime account.</p>
+            <textarea class="textarea" placeholder="Please enter the reason here"></textarea>
+          </div>
+          <div class="v-modal-content__footer">
+            <div class="v-modal-content__btns">
+              <button class="btn v-modal-content__btn" onclick="closeModal(event, 'notification-no')" data-animation="ripple">Back</button>
+              <button class="btn btn_primary v-modal-content__btn" onclick="closeModal(event, 'notification-no')" data-animation="ripple">Continue</button>
+            </div>
+          </div>
+          <div class="error-message v-modal-content__error-message"> *Note: Failing to install and activate Google One and/or Amazon Prime for your customer may affect your compensation </div>
         </div>
         <!-- end v-modal-content -->
       </div>
