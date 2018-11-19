@@ -1,0 +1,356 @@
+<?xml version="1.0"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+  <xsl:template match="/Dashboard">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+
+      <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Email</title>
+        <style type="text/css">
+          .ReadMsgBody {
+            width: 100%;
+            background-color: #FFFFFF;
+          }
+
+          .ExternalClass {
+            width: 100%;
+            background-color: #FFFFFF;
+          }
+
+          body {
+            width: 100%;
+            background-color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            font-family: Arial;
+            color: #444444;
+          }
+
+          table {
+            border-collapse: collapse;
+          }
+
+          @media only screen and (max-width: 640px) {
+            body[yahoo] .deviceWidth {
+              width: 440px !important;
+              padding: 0;
+            }
+
+            body[yahoo] .center {
+              text-align: center !important;
+            }
+          }
+
+          @media only screen and (max-width: 479px) {
+            body[yahoo] .deviceWidth {
+              width: 100% !important;
+              padding: 0;
+            }
+
+            body[yahoo] .center {
+              text-align: center !important;
+            }
+          }
+
+        </style>
+      </head>
+
+      <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" yahoo="fix" style="font-family: Arial; color:#444444;">
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td bgcolor="#FFFFFF">
+              <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="deviceWidth">
+                <tr>
+                  <td>&#160;</td>
+                </tr>
+                <tr>
+                  <td align="center">
+                    <a href="#" target="_blank"><img src="http://b2b.commission.reconciliation.s3-us-west-2.amazonaws.com/dashboards/imgs/logo.jpg" width="114" height="117" border="0" /></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>&#160;</td>
+                </tr>
+                <tr>
+                  <td height="367" valign="top" background="http://b2b.commission.reconciliation.s3-us-west-2.amazonaws.com/dashboards/imgs/header.jpg" bgcolor="#1B98E0">
+                    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td>&#160;</td>
+                      </tr>
+                      <tr>
+                        <td>&#160;</td>
+                      </tr>
+                      <tr class="deviceWidth">
+                        <td style=" font-size:45px; font-family: Arial; color:#FFFFFF; line-height:40px; text-align: center; padding-left:10px; padding-right:10px; font-weight:bold; text-transform:uppercase;">
+                          <xsl:value-of select="/Dashboard/Company/@NAME" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>&#160;</td>
+                      </tr>
+                      <tr>
+                        <td>&#160;</td>
+                      </tr>
+                      <tr>
+                        <td>&#160;</td>
+                      </tr>
+                      <tr>
+                        <td>&#160;</td>
+                      </tr>
+                      <tr>
+                        <td>&#160;</td>
+                      </tr>
+                      <tr>
+                        <td>&#160;</td>
+                      </tr>
+                      <tr>
+                        <td>&#160;</td>
+                      </tr>
+                      <tr>
+                        <td>&#160;</td>
+                      </tr>
+                      <tr>
+                        <td style=" font-size:40px; font-family: Arial; color:#FFFFFF; line-height:46px; text-align: center; padding-left:10px; padding-right:10px; font-weight:bold;"> Carrier Commissions <br />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <table width="82%" border="0" align="center" cellpadding="0" cellspacing="0" class="deviceWidth">
+                            <tr>
+                              <td style="border-bottom: 2px  solid #FFFFFF; padding-bottom:5px;"></td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style=" font-size:40px; font-family: Arial; color:#FFFFFF; line-height:46px; text-align: center; padding-left:10px; padding-right:10px; font-weight:bold;">At-a-glance</td>
+                      </tr>
+                      <tr>
+                        <td>&#160;</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>&#160;</td>
+                </tr>
+                <!-- <tr>
+        <td align="center"><table width="320" border="0" align="left" cellpadding="0" cellspacing="0" class="deviceWidth">
+          <tr>
+            <td><table width="265" border="0" align="left" cellpadding="0" cellspacing="0" class="deviceWidth">
+              <tr>
+                <td bgcolor="#1B98E0" style="font-size: 22px; color:#FFFFFF; font-family: Arial; font-weight:bold; line-height: 22px; vertical-align: middle; padding: 12px; border-radius: 50px; background-color:#1b98e0; text-align: center;" ><a href="#" target="_blank" style="text-decoration:none; color:#FFFFFF;">Help Center</a></td>
+              </tr>
+              <tr>
+                <td>&#160;</td>
+              </tr>
+            </table></td>
+          </tr>
+        </table><table width="265" border="0" align="left" cellpadding="0" cellspacing="0" class="deviceWidth">
+              <tr>
+                <td bgcolor="#1B98E0" style="font-size: 22px; color:#FFFFFF; font-family: Arial; font-weight:bold; line-height: 22px; vertical-align: middle; padding: 12px; border-radius: 50px; background-color:#1b98e0; text-align: center;" ><a href="#" target="_blank" style="text-decoration:none; color:#FFFFFF;">Customer Profile</a></td>
+              </tr>
+              <tr>
+                <td>&#160;</td>
+              </tr>
+          </table></td>
+      </tr> -->
+                <tr>
+                  <td align="center" style=" font-size:18px; font-family: Arial; color:#444444; line-height:26px; text-align: center; padding-left:10px; padding-right:10px;"> Reporting Period: From
+                    <xsl:value-of select="/Dashboard/Company/@DateFrom" /> to
+                    <xsl:value-of select="/Dashboard/Company/@DateTo" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>&#160;</td>
+                </tr>
+              </table>
+              <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="deviceWidth">
+                <tr>
+                  <td>&#160;</td>
+                </tr>
+                <tr>
+                  <td style=" font-size:24px; font-family: Arial; color:#7990a0; line-height:26px; text-align: center; padding-left:10px; padding-right:10px; font-weight:bold;"> Download Reports</td>
+                </tr>
+                <tr>
+                  <td>&#160;</td>
+                </tr>
+              </table>
+              <table width="600" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#e8e8e8" class="deviceWidth">
+                <xsl:for-each select="/Dashboard/FileList/Item">
+                  <tr>
+                    <td width="70%" bgcolor="#FFFFFF" style=" font-size:14px; font-family: Arial; color:#444444; line-height:18px; text-align: left; padding-left:20px; padding-right:10px; padding-top:8px; padding-bottom:8px;"> Reconciliation Report </td>
+                    <td width="30%" bgcolor="#FFFFFF" style=" font-size:14px; font-family: Arial; color:#444444; line-height:26px; text-align: right; padding-left:10px; padding-right:20px;">
+                      <xsl:element name="a">
+                        <xsl:attribute name="href">
+                          <xsl:value-of select="@Url"> </xsl:value-of>
+                        </xsl:attribute> Download
+                      </xsl:element>
+                    </td>
+                  </tr>
+                </xsl:for-each>
+                <!--   <tr>
+          <td colspan="3" bgcolor="#FFFFFF" style=" font-size:13px; font-family: Arial; color:#444444; line-height:20px; text-align: center; padding-left:20px; padding-right:20px; padding-top:15px; padding-bottom:15px;">
+       &#160;
+      </td>
+        </tr>  -->
+              </table>
+              <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="deviceWidth">
+                <tr>
+                  <td>&#160;</td>
+                </tr>
+                <tr>
+                  <td style=" font-size:24px; font-family: Arial; color:#7990a0; line-height:26px; text-align: center; padding-left:10px; padding-right:10px; font-weight:bold;"> Activations Totals:</td>
+                </tr>
+                <tr>
+                  <td>&#160;</td>
+                </tr>
+              </table>
+              <table width="600" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#e8e8e8" class="deviceWidth">
+                <xsl:for-each select="/Dashboard/TransactionTotals/Item">
+                  <tr>
+                    <td width="70%" bgcolor="#FFFFFF" style=" font-size:14px; font-family: Arial; color:#444444; line-height:18px; text-align: left; padding-left:20px; padding-right:10px; padding-top:8px; padding-bottom:8px;">
+                      <xsl:value-of select="@Name" />
+                    </td>
+                    <td width="30%" bgcolor="#FFFFFF" style=" font-size:14px; font-family: Arial; color:#444444; line-height:26px; text-align: right; padding-left:10px; padding-right:20px;">
+                      <xsl:value-of select="@Value" />
+                    </td>
+                  </tr>
+                </xsl:for-each>
+                <!--   <tr>
+          <td colspan="3" bgcolor="#FFFFFF" style=" font-size:13px; font-family: Arial; color:#444444; line-height:20px; text-align: center; padding-left:20px; padding-right:20px; padding-top:15px; padding-bottom:15px;">
+       &#160;
+      </td>
+        </tr>  -->
+              </table>
+              <!-- Charts -->
+              <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="deviceWidth">
+                <tr>
+                  <td>&#160;</td>
+                </tr>
+                <xsl:for-each select="/Dashboard/ChartList/Item">
+                  <tr>
+                    <td style=" font-size:24px; font-family: Arial; color:#7990a0; line-height:26px; text-align: center; padding-left:10px; padding-right:10px; font-weight:bold;">
+                      <xsl:value-of select="@Name" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="center">
+                      <xsl:element name="img">
+                        <xsl:attribute name="src">
+                          <xsl:value-of select="@Url"> </xsl:value-of>
+                        </xsl:attribute>
+                      </xsl:element>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>&#160;</td>
+                  </tr>
+                  <tr>
+                    <td>&#160;</td>
+                  </tr>
+                  <tr>
+                    <td>&#160;</td>
+                  </tr>
+                </xsl:for-each>
+              </table>
+              <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="deviceWidth">
+                <tr>
+                  <td>
+                    <table width="45%" border="0" align="center" cellpadding="0" cellspacing="0" class="deviceWidth">
+                      <tr>
+                        <td bgcolor="#1B98E0" style="font-size: 22px; color:#FFFFFF; font-family: Arial; font-weight:bold; line-height: 22px; vertical-align: middle; padding: 12px; border-radius: 50px; background-color:#1b98e0; text-align: center;"><a href="#" target="_blank" style="text-decoration:none; color:#FFFFFF;">Schedule a review</a></td>
+                      </tr>
+                      <tr>
+                        <td>&#160;</td>
+                      </tr>
+                    </table>
+                    <table width="45%" border="0" align="center" cellpadding="0" cellspacing="0" class="deviceWidth">
+                      <tr>
+                        <td bgcolor="#1B98E0" style="font-size: 22px; color:#FFFFFF; font-family: Arial; font-weight:bold; line-height: 22px; vertical-align: middle; padding: 12px; border-radius: 50px; background-color:#1b98e0; text-align: center;"><a href="#" target="_blank" style="text-decoration:none; color:#FFFFFF;">Report an issue</a></td>
+                      </tr>
+                      <tr>
+                        <td>&#160;</td>
+                      </tr>
+                    </table>
+                    <table width="45%" border="0" align="center" cellpadding="0" cellspacing="0" class="deviceWidth">
+                      <tr>
+                        <td bgcolor="#1B98E0" style="font-size: 22px; color:#FFFFFF; font-family: Arial; font-weight:bold; line-height: 22px; vertical-align: middle; padding: 12px; border-radius: 50px; background-color:#1b98e0; text-align: center;"><a href="#" target="_blank" style="text-decoration:none; color:#FFFFFF;">Give us feedback</a></td>
+                      </tr>
+                      <tr>
+                        <td>&#160;</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center">
+                    <!--  <a href="#" target="_blank"><img src="http://b2b.commission.reconciliation.s3-us-west-2.amazonaws.com/dashboards/imgs/metro-logo.jpg" width="151" height="29" border="0" /></a> -->
+                  </td>
+                </tr>
+                <tr>
+                  <td>&#160;</td>
+                </tr>
+                <tr>
+                  <td bgcolor="#333333">&#160;</td>
+                </tr>
+                <tr>
+                  <td bgcolor="#333333" style=" font-size:22px; font-family: Arial; color:#FFFFFF; line-height:26px; text-align: center; padding-left:10px; padding-right:10px;">Corporate Office</td>
+                </tr>
+                <tr>
+                  <td bgcolor="#333333">&#160;</td>
+                </tr>
+                <tr>
+                  <td align="center" bgcolor="#333333" style=" font-size:14px; font-family: Arial; color:#737373; line-height:26px; text-align: center; padding-left:10px; padding-right:10px;">30 Broad Street, Floor 22, <br /> New York, NY 10004 <br />
+                    <b style="color:#FFFFFF;">P:</b> +1 (212) 742-2301 <b style="color:#FFFFFF;">E:</b> <a href="mailto:sales@b2bsoft.com" target="_blank" style="color:#737373; text-decoration:none;">sales@b2bsoft.com</a></td>
+                </tr>
+                <tr>
+                  <td bgcolor="#333333">&#160;</td>
+                </tr>
+                <tr>
+                  <td bgcolor="#333333">
+                    <table width="218" border="0" align="center" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td>
+                          <a href="#" target="_blank"><img src="http://b2b.commission.reconciliation.s3-us-west-2.amazonaws.com/dashboards/imgs/mail.jpg" width="32" height="16" border="0" /></a>
+                        </td>
+                        <td>
+                          <a href="#" target="_blank"><img src="http://b2b.commission.reconciliation.s3-us-west-2.amazonaws.com/dashboards/imgs/facebook.jpg" width="37" height="16" border="0" /></a>
+                        </td>
+                        <td>
+                          <a href="#" target="_blank"><img src="http://b2b.commission.reconciliation.s3-us-west-2.amazonaws.com/dashboards/imgs/twitter.jpg" width="37" height="16" border="0" /></a>
+                        </td>
+                        <td>
+                          <a href="#" target="_blank"><img src="http://b2b.commission.reconciliation.s3-us-west-2.amazonaws.com/dashboards/imgs/google.jpg" width="42" height="16" border="0" /></a>
+                        </td>
+                        <td>
+                          <a href="#" target="_blank"><img src="http://b2b.commission.reconciliation.s3-us-west-2.amazonaws.com/dashboards/imgs/in.jpg" width="39" height="16" border="0" /></a>
+                        </td>
+                        <td>
+                          <a href="#" target="_blank"><img src="http://b2b.commission.reconciliation.s3-us-west-2.amazonaws.com/dashboards/imgs/youtube.jpg" width="31" height="16" border="0" /></a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td bgcolor="#333333">&#160;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <p>Build :
+          <xsl:value-of select="/Dashboard/Env/EnvBuild" />
+        </p>
+      </body>
+
+    </html>
+  </xsl:template>
+  <xsl:template match="greeter">
+    <DIV>from <I>
+        <xsl:value-of select="." /></I>
+    </DIV>
+  </xsl:template>
+</xsl:stylesheet>

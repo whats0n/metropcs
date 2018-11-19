@@ -1,0 +1,20 @@
+---
+title: Schedule a review
+---
+{% extends "layouts/_layout-pages.html" %}
+
+{% block content %}
+	
+	<div class="page__text">
+		<p>OLR Identifier, Client ID, Company name</p>
+	</div>
+	<form action="/" class="page__form">
+		<div class="page__field">
+			<textarea cols="30" rows="10" class="textarea" placeholder="Enter suggested review time"></textarea>
+		</div>
+		<div class="page__submit">
+			<button class="btn btn_primary btn_lg btn_block" data-animation="ripple">Submit</button>
+		</div>
+	</form>
+
+{% endblock %}

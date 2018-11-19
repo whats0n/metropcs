@@ -32,3 +32,9 @@ PageList:
 - file: customer-info.html
 - file: financing.html
 - file: summary-page.html
+
+
+- file: email.html
+- file: schedule-a-review.html
+- file: report-an-issue.html
+- file: give-us-feedback.html
