@@ -298,8 +298,20 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td align="center">
-                                        <!--  <a href="#" target="_blank"><img src="http://b2b.commission.reconciliation.s3-us-west-2.amazonaws.com/dashboards/imgs/metro-logo.jpg" width="151" height="29" border="0" /></a> --></td>
+                                    <td style="padding-top: 20px;">
+                                        <h2 style="font-size: 26px; font-weight: 700;">The MCR Report - Frequently Asked Questions</h2>
+                                        <h3 style="color: #9784ff; font-size: 20px; font-weight: 700;"><span style="color: #141547; font-size: 120%;">Q.</span> Why are me activations not being matched to Callidus ("Not Found in Callidus")</h3>
+                                        <p style="margin: 1em 0;"><span style="color: #141547; font-size: 120%; font-weight: 700;">A.</span> In order to match Wireless Standart activations to Callidius we use a set of parameters. If we are missing these parameters in the WS Activation Detail report it will make it difficult to match activations with Callidius. This is mostly due to Manual Activations in which some data is not recorded. Parameters used to match activations are:</p>
+                                        <ul style="padding: 0 0 0 40px; margin: 1em 0;">
+                                            <li>IMEI</li>
+                                            <li>Mobile Number</li>
+                                            <li>Subscriber ID</li>
+                                            <li>Account Number</li>
+                                        </ul>
+                                        <p style="margin: 1em 0 1em 40px;">If activation was processed via Interface then it means that there are no payments in Callidius for the corresponding activation.</p>
+                                        <h3 style="color: #9784ff; font-size: 20px; font-weight: 700;"><span style="color: #141547; font-size: 120%;">Q.</span> Why am I being overpaid?</h3>
+                                        <p style="margin: 1em 0;"><span style="color: #141547; font-size: 120%; font-weight: 700;">A.</span> In order for Wireless Standart to provide correct expected compensation it is important that transactions are recorded correctly. Example: if a sales rep did not follow correct activation flow for an Upgrade (validate eligibility) it might be recorded as a Non-eligible upgrade, Feature Change or IMEI/ESN Change. Therefore we are not expecting a compensation but in fact Callidius will show a payment for the Handset Upgrade and EDLP for device.</p>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>&#160;</td>
